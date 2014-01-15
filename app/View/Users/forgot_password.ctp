@@ -1,66 +1,32 @@
 <div class="highlight">
 	<div class="clearfix">
-		<center>
-			<shadow>
-				<div align="center">
-					<br><br>					
-					<h1 >Register</h1>
-					<table height="100%" border="0" align="center" cellpadding="0" cellspacing="0"><tbody><tr><td valign="top"><div align="center">	
-					<?php echo $this->Form->create('User'); ?>
-						<table border="0" align="center" cellpadding="3" cellspacing="0"><form action="./register - dollarsflowsystem.com_files/register - dollarsflowsystem.com.htm" method="post"></form><input type="hidden" name="formregisterx" value="formregisterx">
-							<tbody>
-								<tr>
-									<td>Username:</td>
-									<td>
-										<?php echo $this->Form->input('username', array('label'=>false, 'div'=>false)) ?>
-									</td>
-								</tr>
-								<tr>
-									<td>Password:</td>
-									<td>
-										<?php echo $this->Form->input('password', array('label'=>false, 'div'=>false)) ?>
-									</td>
-								</tr>
-								<tr>
-									<td>Confirm password:</td>
-									<td>
-										<?php echo $this->Form->input('confirm_password', array('label'=>false, 'div'=>false)) ?>
-									</td>
-								</tr>
-								<tr>
-									<td>Email address:</td>
-									<td>
-										<?php echo $this->Form->input('email', array('label'=>false, 'div'=>false)) ?>
-									</td>
-								</tr>
-								<tr>
-									<td>Confirm email address:</td>
-									<td>
-										<?php echo $this->Form->input('confirm_email', array('label'=>false, 'div'=>false)) ?>
-									</td>
-								</tr>
-								<tr>
-									<td>Sponsor:</td>
-									<td>
-										<?php echo $this->Form->input('confirm_email', array('label'=>false, 'div'=>false, 'readonly'=>true)) ?>
-									</td>
-								</tr>
-								<tr>
-									<td colspan="2" align="right">
-										<center>
-											<?php echo $this->Form->submit('Register!', array('label'=>false, 'div'=>false, 'style' => 'margin-top: 35px;')) ?>											
-										</center>
-									</td>
-								</tr>								
-							</tbody>
-						</table>
-					<?php echo $this->Form->end(); ?>
-
-						</div>
-						</td></tr></tbody>
-					</table> 
-
-
-	</div></shadow></center>
+<center><shadow>
+<center><h1>Forgot Password</h1><br><br>
+<p>Please fill out the form below. You'll need your username and the<br>e-mail address you used to register (unless you have since changed it). </p><br><br>
+<?php echo $this->Form->create('User') ?>
+	<table align="center" border="0" cellspacing="0" cellpadding="3">
+		<tbody>
+			<tr>
+				<td>Username:</td>
+				<td width="144">
+					<input type="text" tabindex="1" name="user" value="">
+				</td>
+			</tr>
+			<tr>
+				<td>E-mail address:</td>
+				<td>
+					<input type="text" tabindex="2" name="email" value="">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<br><br>
+					<?php echo $this->Form->submit('Get New Password', array('label'=>false, 'div'=>false)) ?>
+				</td>
+			</tr>		
+		</tbody>
+	</table>
+<?php echo $this->Form->end(); ?>
+</shadow></center>
 </div>
-<br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br>

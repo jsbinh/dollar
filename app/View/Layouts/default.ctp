@@ -32,6 +32,8 @@ $cakeDescription = 'Home - dollarsflowsystem.com';
 
 		echo $this->Html->css(array('style'));
 
+		echo $this->Html->script(array('jquery.min', 'scrolltopcontrol'));
+
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
@@ -61,13 +63,15 @@ $cakeDescription = 'Home - dollarsflowsystem.com';
 					        	echo ' ';
 					        	echo $this->Html->link('Login', array('controller' =>'Users', 'action'=>'login'), array('class' => 'myButton'));
 					        	echo ' ';
-					        ?>
-								
-								
-								<a href="#" class="myButton">Investments</a>
-								<a href="#" class="myButton">Payments</a>
-								<a href="#" class="myButton">Partners</a>
-								<a href="#" class="myButton">Contact</a>						
+					        	echo $this->Html->link('Investments', array('controller' =>'Investments', 'action'=>'index'), array('class' => 'myButton'));
+					        	echo ' ';
+					        	echo $this->Html->link('Payments', array('controller' =>'Payments', 'action'=>'index'), array('class' => 'myButton'));
+					        	echo ' ';
+					        	echo $this->Html->link('Partners', array('controller' =>'Partners', 'action'=>'index'), array('class' => 'myButton'));
+					        	echo ' ';
+					        	echo $this->Html->link('Contact', array('controller' =>'Contacts', 'action'=>'index'), array('class' => 'myButton'));
+					        	echo ' ';
+					        ?>					
 						</div>
 					</td>
 			       </tr>

@@ -4,10 +4,9 @@
 			<shadow>
 				<div align="center">
 					<br><br>					
-					<h1 >Register</h1>
-					<table height="100%" border="0" align="center" cellpadding="0" cellspacing="0"><tbody><tr><td valign="top"><div align="center">	
+					<h1 >Register</h1>					
 					<?php echo $this->Form->create('User'); ?>
-						<table border="0" align="center" cellpadding="3" cellspacing="0"><form action="./register - dollarsflowsystem.com_files/register - dollarsflowsystem.com.htm" method="post"></form><input type="hidden" name="formregisterx" value="formregisterx">
+						<table border="0" align="center" cellpadding="3" cellspacing="0">
 							<tbody>
 								<tr>
 									<td>Username:</td>
