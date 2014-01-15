@@ -17,7 +17,7 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$cakeDescription = 'Home - dollarsflowsystem.com';
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,41 +38,47 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 	?>
 </head>
 <body>
-	
-		<title>Home - dollarsflowsystem.com</title>
-		<div id="header">
-			<table width="960" border="0" height="52" align="center" cellpadding="0" cellspacing="0">
-		        <tbody>
-		        	<tr>
-			          	<td width="320">
-			          		<div align="left">
-			          			<?php echo $this->Html->image('logo.png', array('alt' => 'LOGO', 'height' => 52, 'width' => 320)); ?>
-			          		</div>
-			          	</td>
-				        <td width="640">
-					        <div align="center">					  
-								<a href="#" class="myButton">Home</a>
-								<a href="#" class="myButton">Details</a>
-								<a href="#" class="myButton">Faq</a>
-								<a href="#" class="myButton">Register</a>
-								<a href="#" class="myButton">Login</a>
+	<title>Home - dollarsflowsystem.com</title>
+	<div id="header">
+		<table width="960" border="0" height="52" align="center" cellpadding="0" cellspacing="0">
+		    <tbody>
+		        <tr>
+			        <td width="320">
+			          	<div align="left">
+			          		<?php echo $this->Html->image('logo.png', array('alt' => 'LOGO', 'height' => 52, 'width' => 320)); ?>
+			          	</div>
+			        </td>
+				    <td width="640">
+					    <div align="center">
+					        <?php 
+					        	echo $this->Html->link('Home', array('controller' =>'Home', 'action'=>'index'), array('class' => 'myButton'));
+					        	echo ' ';
+					        	echo $this->Html->link('Details', array('controller' =>'Home', 'action'=>'details'), array('class' => 'myButton'));
+					        	echo ' ';
+					        	echo $this->Html->link('Faq', array('controller' =>'Home', 'action'=>'faq'), array('class' => 'myButton'));
+					        	echo ' ';
+					        	echo $this->Html->link('Register', array('controller' =>'Users', 'action'=>'register'), array('class' => 'myButton'));
+					        	echo ' ';
+					        	echo $this->Html->link('Login', array('controller' =>'Users', 'action'=>'login'), array('class' => 'myButton'));
+					        	echo ' ';
+					        ?>
+								
+								
 								<a href="#" class="myButton">Investments</a>
 								<a href="#" class="myButton">Payments</a>
 								<a href="#" class="myButton">Partners</a>
 								<a href="#" class="myButton">Contact</a>						
-							</div>
-						</td>
-			        </tr>
-		      	</tbody>
-	      	</table>
-		</div>
-		<div class="clearfix">
-		<div id="content">
+						</div>
+					</td>
+			       </tr>
+		      </tbody>
+	    </table>
+	</div>
+	<div id="content">
+		<?php echo $this->Session->flash(); ?>
 
-			<?php echo $this->Session->flash(); ?>
-
-			<?php echo $this->fetch('content'); ?>
-		</div>
+		<?php echo $this->fetch('content'); ?>
+	</div>
 		<div id="footer">
 			<div id="footnote">
 				<div class="clearfix">
@@ -83,8 +89,16 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 									<div align="left">
 								  		<font size="2" face="verdana">
 								  			<shadowwhite>
-								  				<a href="tos.php">Terms</a>
-								  &nbsp;&nbsp;<a href="fees.php">Fees</a> &nbsp;&nbsp;<a href="CertificateDFS.jpg">Certificate Incorporation</a> &nbsp;&nbsp;<a href="myforexcertificate.jpg">Certificate Trading</a> &nbsp;&nbsp;
+								  			<?php
+								  				echo $this->Html->link('Terms', array('controller' =>'Home', 'action'=>'tos'));
+								  				echo '&nbsp;&nbsp';
+								  				echo $this->Html->link('Fees', array('controller' =>'Home', 'action'=>'fees'));
+								  				echo '&nbsp;&nbsp';
+								  				echo $this->Html->link('Certificate Incorporation', array('controller' =>'Home', 'action'=>'certificateIncorporation'));
+								  				echo '&nbsp;&nbsp';
+								  				echo $this->Html->link('Certificate Trading', array('controller' =>'Home', 'action'=>'certificateTrading'));
+								  				echo '&nbsp;&nbsp';								  				
+								  			?>
 								  			</shadowwhite>
 								  		</font>
 								  	</div>

@@ -1,4 +1,8 @@
 /* Website template by freewebsitetemplates.com */
+html{
+	overflow: scroll;
+	overflow-x: auto; 
+}
 body {
 	background-color: #e2e2e2;
 	min-width: 960px;
@@ -39,13 +43,13 @@ img {
 }
 /*------------ Sprites ------------*/
 .more, .subscribe, input[type='submit'] {
-	background: url(../images/interface.png) no-repeat;
+	background: url(../img/interface.png) no-repeat;
 }
 .phone, .mail, .home, .fax, #footnote .connect a {
-	background: url(../images/icons.png) no-repeat;
+	background: url(../img/icons.png) no-repeat;
 }
 .frame1, .frame2, .frame3, .frame4, .frame5, .news > li {
-	background: url(../images/frames.png) no-repeat;
+	background: url(../img/frames.png) no-repeat;
 }
 .more, .subscribe, input[type='submit'] {
 	background-position: -107px 0;
@@ -124,7 +128,7 @@ img {
 }
 /*------------ HEADER ------------*/
 #header {
-	background: #4e5944 url(../images/bg-header.jpg) repeat-x left bottom;
+	background: #4e5944 url(../img/bg-header.jpg) repeat-x left bottom;
 	padding: 9px 0 9px;
 }
 /** logo **/
@@ -213,7 +217,7 @@ p a:hover {
 }
 /** Adbox **/
 #adbox {
-	background: url(../images/bg-adbox.png) no-repeat center bottom;
+	background: url(../img/bg-adbox.png) no-repeat center bottom;
 	border-bottom: 1px solid #fff;
 	padding-top: 15px;
 }
@@ -251,7 +255,7 @@ p a:hover {
 	margin: 0;
 }
 .highlight {
-	background: #eee url(../images/bg-highlight.jpg) repeat-x left bottom;
+	background: #eee url(../img/bg-highlight.jpg) repeat-x left bottom;
 	border-bottom: 1px solid #fff;
 }
 .highlight .clearfix {
@@ -268,7 +272,7 @@ p a:hover {
 	margin-bottom: 24px;
 }
 .testimonial, .main, .sidebar > div h2, .sidebar ul li, .main > .section {
-	background-image: url(../images/border.png);
+	background-image: url(../img/border.png);
 	background-position: left top;
 	background-repeat: repeat-y;
 }
@@ -543,7 +547,7 @@ p a:hover {
 }
 /*------------ FOOTER ------------*/
 #footer {
-	background: #d9d9d9 url(../images/bg-footer.png) repeat-x left top;
+	background: #d9d9d9 url(../img/bg-footer.png) repeat-x left top;
 	border-top: 2px solid #fff;
 }
 #footer .section {
@@ -570,7 +574,7 @@ p a:hover {
 	text-transform: uppercase;
 }
 #footnote {
-	background: url(../images/bg-footnote.jpg) repeat-x left top;
+	background: url(../img/bg-footnote.jpg) repeat-x left top;
 	border-top: 1px solid #fff;
 	padding: 6px 0 3px;
 }
