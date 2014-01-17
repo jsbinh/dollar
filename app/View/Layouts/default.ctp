@@ -45,6 +45,7 @@ $cakeDescription = 'Home - dollarsflowsystem.com';
 		<table width="960" border="0" height="52" align="center" cellpadding="0" cellspacing="0">
 		    <tbody>
 		        <tr>
+		        	<?php if(!$this->Session->read('user')){ ?>
 			        <td width="320">
 			          	<div align="left">
 			          		<?php echo $this->Html->image('logo.png', array('alt' => 'LOGO', 'height' => 52, 'width' => 320)); ?>
@@ -52,28 +53,63 @@ $cakeDescription = 'Home - dollarsflowsystem.com';
 			        </td>
 				    <td width="640">
 					    <div align="center">
-					        <?php 
+					        <?php					        	
 					        	echo $this->Html->link('Home', array('controller' =>'Home', 'action'=>'index'), array('class' => 'myButton'));
-					        	echo ' ';
-					        	echo $this->Html->link('Details', array('controller' =>'Home', 'action'=>'details'), array('class' => 'myButton'));
-					        	echo ' ';
-					        	echo $this->Html->link('Faq', array('controller' =>'Home', 'action'=>'faq'), array('class' => 'myButton'));
-					        	echo ' ';
-					        	echo $this->Html->link('Register', array('controller' =>'Users', 'action'=>'register'), array('class' => 'myButton'));
-					        	echo ' ';
-					        	echo $this->Html->link('Login', array('controller' =>'Users', 'action'=>'login'), array('class' => 'myButton'));
-					        	echo ' ';
-					        	echo $this->Html->link('Investments', array('controller' =>'Investments', 'action'=>'index'), array('class' => 'myButton'));
-					        	echo ' ';
-					        	echo $this->Html->link('Payments', array('controller' =>'Payments', 'action'=>'index'), array('class' => 'myButton'));
-					        	echo ' ';
-					        	echo $this->Html->link('Partners', array('controller' =>'Partners', 'action'=>'index'), array('class' => 'myButton'));
-					        	echo ' ';
-					        	echo $this->Html->link('Contact', array('controller' =>'Contacts', 'action'=>'index'), array('class' => 'myButton'));
-					        	echo ' ';
+						        echo ' ';
+						        echo $this->Html->link('Details', array('controller' =>'Home', 'action'=>'details'), array('class' => 'myButton'));
+						        echo ' ';
+						        echo $this->Html->link('Faq', array('controller' =>'Home', 'action'=>'faq'), array('class' => 'myButton'));
+						        echo ' ';
+						        echo $this->Html->link('Register', array('controller' =>'Users', 'action'=>'register'), array('class' => 'myButton'));
+						        echo ' ';
+						        echo $this->Html->link('Login', array('controller' =>'Users', 'action'=>'login'), array('class' => 'myButton'));
+						        echo ' ';
+						        echo $this->Html->link('Investments', array('controller' =>'Investments', 'action'=>'index'), array('class' => 'myButton'));
+						        echo ' ';
+						        echo $this->Html->link('Payments', array('controller' =>'Payments', 'action'=>'index'), array('class' => 'myButton'));
+						        echo ' ';
+						        echo $this->Html->link('Partners', array('controller' =>'Partners', 'action'=>'index'), array('class' => 'myButton'));
+						        echo ' ';
+						        echo $this->Html->link('Contact', array('controller' =>'Contacts', 'action'=>'index'), array('class' => 'myButton'));
+						        echo ' ';				        	
+					        	
 					        ?>					
 						</div>
 					</td>
+					<?php 
+					}else{ ?>					
+					          	<td>
+					          		<div align="center">
+					          			<?php 
+					          				echo $this->Html->link('My account', array('controller' =>'Users', 'action'=>'member'), array('class' => 'myButtonlogado'));
+						        			echo ' ';
+						        			echo $this->Html->link('Profile', array('controller' =>'Users', 'action'=>'profile'), array('class' => 'myButtonlogado'));
+						        			echo ' ';
+						        			echo $this->Html->link('History', array('controller' =>'Users', 'action'=>'history'), array('class' => 'myButtonlogado'));
+						        			echo ' ';
+						        			echo $this->Html->link('Withdraw', array('controller' =>'Users', 'action'=>'withdraw'), array('class' => 'myButtonlogado'));
+						        			echo ' ';
+					          			?>
+										  
+										  <a href="" class="myButtonlogado">Referrals</a>
+			
+										<?php
+											echo $this->Html->link('Investments', array('controller' =>'Investments', 'action'=>'admin_index'), array('class' => 'myButtonlogado'));
+						        			echo ' ';											
+											echo $this->Html->link('Payments', array('controller' =>'Payments', 'action'=>'index'), array('class' => 'myButtonlogado'));
+							        		echo ' ';
+											echo $this->Html->link('Tools', array('controller' =>'Users', 'action'=>'tools'), array('class' => 'myButtonlogado'));
+						        			echo ' ';
+											echo $this->Html->link('Partners', array('controller' =>'Partners', 'action'=>'index'), array('class' => 'myButtonlogado'));
+						        			echo ' ';
+											echo $this->Html->link('Contact', array('controller' =>'Contacts', 'action'=>'index'), array('class' => 'myButtonlogado'));
+						        			echo ' ';	
+					          				echo $this->Html->link('Logout', array('controller' =>'Users', 'action'=>'logout'), array('class' => 'myButtonlogado'));
+						        			echo ' ';
+					          			?>
+							  		</div>
+							  	</td>				      		        
+					<?php } ?>
 			       </tr>
 		      </tbody>
 	    </table>
@@ -111,7 +147,7 @@ $cakeDescription = 'Home - dollarsflowsystem.com';
 							    	<div align="right">
 										<font size="2" face="verdana" color="#fff">
 											<shadowwhite>
-												© 2013 Dollars Flow System, All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												© 2013 hcbinh@gmail.com, All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 											</shadowwhite>
 										</font>
 									</div>
