@@ -147,7 +147,7 @@ $cakeDescription = 'Home - dollarsflowsystem.com';
 							    	<div align="right">
 										<font size="2" face="verdana" color="#fff">
 											<shadowwhite>
-												© 2013 hcbinh@gmail.com, All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												© 2013 profitdollar200@gmail.com, All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 											</shadowwhite>
 										</font>
 									</div>

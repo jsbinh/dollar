@@ -53,6 +53,10 @@ class UsersController extends AppController {
 		if(!$this->Session->read('user')){
 			$this->redirect(array('controller'=>'Users', 'action'=>'login'));
 		}
+		$user = $this->Session->read('user');
+		
+
+		$this->set('user', $user);
 	}
 
 	public function tools(){
