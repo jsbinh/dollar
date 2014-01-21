@@ -815,3 +815,7 @@ shadow {color: black; text-shadow: 1px 1px 0px rgba(150, 145, 150, 0.4);}
         position:relative;
         top:1px;
     }
+
+    .error-message{
+    	color: #F78181;
+    }

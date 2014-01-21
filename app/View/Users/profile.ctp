@@ -16,7 +16,7 @@
 <font face="verdana" size="2"><strong>Your sponsor is:</strong> none</font><br><br>
 
 <center><br>
-	<form action="./profile - dollarsflowsystem.com_files/profile - dollarsflowsystem.com.htm" name="form" method="post">
+	<form action="" name="form" method="post">
 	<input type="hidden" name="formeditaccount" value="formeditaccount">
 	
 	<table width="400" border="0" cellpadding="2" cellspacing="2">
@@ -78,5 +78,5 @@
 </shadow>
 </center>
 </div>
+<br><br><br><br><br><br><br><br><br><br>
 </div>
-<br><br><br><br><br><br><br><br><br><br

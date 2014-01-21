@@ -9,7 +9,14 @@ class UsersController extends AppController {
 	}
 
 	public function register() {
-
+		if($this->request->is('POST') || $this->request->is('PUT')){			
+			if($this->User->customValidate()){
+				if($this->User->save($this->request->data)){
+					$this->Session->setFlash('Register successful!');
+					$this->redirect(array('register'));
+				}
+			}
+		}
 	}
 
 	public function login() {
@@ -36,27 +43,40 @@ class UsersController extends AppController {
 	}
 
 	public function member(){
+		if(!$this->Session->read('user')){
+			$this->redirect(array('controller'=>'Users', 'action'=>'login'));
+		}
 
 	}
 
 	public function profile(){
-		
+		if(!$this->Session->read('user')){
+			$this->redirect(array('controller'=>'Users', 'action'=>'login'));
+		}
 	}
 
 	public function tools(){
-
+		if(!$this->Session->read('user')){
+			$this->redirect(array('controller'=>'Users', 'action'=>'login'));
+		}
 	}
 
 	public function history(){
-		
+		if(!$this->Session->read('user')){
+			$this->redirect(array('controller'=>'Users', 'action'=>'login'));
+		}
 	}
 
 	public function withdraw() {
-
+		if(!$this->Session->read('user')){
+			$this->redirect(array('controller'=>'Users', 'action'=>'login'));
+		}
 	}
 
 	public function referrals(){
-		
+		if(!$this->Session->read('user')){
+			$this->redirect(array('controller'=>'Users', 'action'=>'login'));
+		}
 	}
 
 	public function logout(){

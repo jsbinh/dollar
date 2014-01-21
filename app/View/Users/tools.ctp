@@ -13,7 +13,7 @@
 <br><br>
 <?php echo $this->Html->image('banner468x60.gif') ?><br><br>
 
-<textarea cols="65" rows="4" class="webforms">&lt;a href='http://dollarsflowsystem.com/?ref=trocvuong'&gt;
+<textarea cols="65" rows="4" class="webforms"><a href='http://dollarsflowsystem.com/?ref=trocvuong'>;
 <?php echo $this->Html->image('banner468x60.gif') ?>
 <?
 
