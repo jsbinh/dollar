@@ -107,3 +107,7 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+// Email send mail to
+
+Configure::write('send_to_email', 'hcbinh@gmail.com');

@@ -1,64 +1,48 @@
-<table height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tbody><tr>
-    <td valign="top">
-	
-	
-	
-	
-	
-<br><br>
-    <div id="wrapper">
-        <form action="" method="post">
-		<input type="hidden" name="contactform" value="contactform">
-            <fieldset>
-                <legend>Contact Form</legend>
-                <div><br><br>
-<table width="452" border="0" align="center">
-  <tbody><tr>
-    <td width="60" valign="top"><div align="left">Name: </div></td>
-    <td width="361"><div align="center">
-      <input type="text" name="name">
-    </div></td>
-  </tr>
-  <tr>
-    <td valign="top"><div align="left">Email:</div></td>
-    <td><div>
+<?php echo $this->Form->create('Contact'); ?>
+    <table height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tbody>
+            <tr>
+                <td valign="top">
+                    <br><br>
+                    <div id="wrapper">                    
+                            <fieldset>
+                                <legend>Contact Form</legend>
 
-          <div align="center">
-            <input type="text" name="email">
-            </div><br><br>
-    </div></td>
-  </tr>
-</tbody></table>
-
-				
-				
-				
-				
-				
-                    
-                </div>
-                <div>
-                  <div align="center">
-                    <textarea name="message" placeholder="Message"></textarea>
-                    
+                    <div><br><br>
+                        <table width="452" border="0" align="center">
+                            <tbody>
+                                <tr>
+                                    <td width="60" valign="top" align="left">Name: </td>
+                                    <td width="361">
+                                        <?php echo $this->Form->input('name', array('label'=>false, 'div'=>false, 'required'=>false)); ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="top" align="left">Email:</td>
+                                    <td >
+                                        <?php echo $this->Form->input('email', array('type'=>'text','label'=>false, 'div'=>false, 'required'=>false)); ?>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                </div>    
-                <div align="center"><br><br>
-                  <input type="submit" name="submit" value="Send message"><br><br>
+                    <br><br>
+                    <div align="left">
+                        <div >
+                            <?php echo $this->Form->input('note', array('div'=>false, 'label'=>false, 'type'=>'textarea', 'required'=>false)) ?>
+                        </div>
                     </div>
-            </fieldset>    
-        </form>
-		</div>
-
-<br><br>
-</td>
-  </tr>
-</tbody></table>
-</shadow>
-</center>
-</div>
-</div>
+                    <br><br>
+                    <div align="center">
+                        <?php echo $this->Form->submit('Send message', array('controller'=>'Contacts', 'action'=>'index')) ?>
+                    </div>
+                    <br><br>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<?php echo $this->Form->end(); ?>
+<br><br><br><br><br>
 
 <style type="text/css">
   #wrapper {

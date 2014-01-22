@@ -7,8 +7,4 @@ class PartnersController extends AppController {
 	public function index(){
 
 	}
-
-	public function registerPartner(){
-
-	}
 }
