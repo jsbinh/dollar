@@ -118,15 +118,15 @@ class UsersController extends AppController {
 		}
 	}
 
-	public function registerPartner(){
+	public function registerPartner(){		
 		if(!$this->Session->read('user'))
 			$this->redirect(array('controller'=>'Users', 'action'=>'login'));
 	
-		if($this->request->is('POST') || $this->request->is('PUT')){
+		if($this->request->is('PUT')){
 			$data = $this->request->data;			
 			if($this->User->save($data)){
 				$this->Session->setFlash('Update successful', 'success');
-				$this->redirect(array('action'=>'profile'));
+				$this->redirect(array('action'=>'registerPartner'));
 			}else{
 				$this->Session->setFlash('Update error', 'error');
 			}

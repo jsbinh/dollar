@@ -46,7 +46,7 @@ Space is limited to 3 representatives per country.
 
 <br><br>
 
-<?php echo $this->Form->create('Partner', array('controller'=>'Partners', 'action'=>'registerPartner')) ?>
+<?php echo $this->Form->create('User', array('controller'=>'Users', 'action'=>'registerPartner')) ?>
 
 <?php echo $this->Form->submit('Register Partner') ?>
 
