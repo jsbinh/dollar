@@ -28,7 +28,7 @@
                         <font size="2" face="verdana"><sombra>Email:</sombra></font>
                     </td>
                     <td width="200">
-                        <?php echo $this->Form->input('email', array('size'=>'35', 'readonly'=>true, 'style'=>'color:grey', 'label'=>false, 'div'=>false)) ?>                        
+                        <?php echo $this->Form->input('email', array('size'=>'35', 'readonly'=>true, 'style'=>'color:grey', 'label'=>false, 'div'=>false)) ?>
                     </td>
                 </tr>
                 <tr>
