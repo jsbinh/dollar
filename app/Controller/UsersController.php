@@ -10,7 +10,7 @@ class UsersController extends AppController {
 	}
 
 	public function register() {
-		if($this->request->is('POST') || $this->request->is('PUT')){			
+		if($this->request->is('POST') || $this->request->is('PUT')){
 			if($this->User->customValidate()){
 				if($this->User->save($this->request->data)){
 					$this->Session->setFlash('Register successful!');
@@ -54,24 +54,24 @@ class UsersController extends AppController {
 			}else{
 				$password = rand(1000000000,9999999999);
 				if($this->User->updateAll(array('User.password'=>$password), array('User.id'=>$user['User']['id']))){
-					$this->_sendEmai($user, $password);
+					$this->_sendEmail($user, $password);
 					$this->Session->setFlash('Newpassword sent to your email!');
 				}
 			}
 		}
 	}
 
-	public function _sendEmai($data, $password){
-		$send_to_email = Configure::read('send_to_email');		
+	public function _sendEmail($data, $password){
+		$send_to_email = Configure::read('send_to_email');
 		$Email = new CakeEmail('default');
-      	$subject = 'PROFITDOLLAR200.com - Your New Password';
+      	$subject = 'Forexpam.com - Your New Password';
       	$content = 
       		'Hello '.$data['User']['username'].'!<br><br>'.
       		'Your new password is: '. $password. '<br><br>'.
       		'Support PDS';
-      		
+
         $Email->emailFormat('html')
-                ->to($data['User']['email'])               
+                ->to($data['User']['email'])
                 ->from($send_to_email)
                 ->subject($subject)
                 ->send(nl2br($content));
@@ -89,7 +89,6 @@ class UsersController extends AppController {
 		if(!$this->Session->read('user')){
 			$this->redirect(array('controller'=>'Users', 'action'=>'login'));
 		}
-		
 		if($this->request->is('POST') || $this->request->is('PUT')){
 			$data = $this->request->data;
 			if($data['User']['solidtrustpay'] == 'none'){
@@ -118,12 +117,12 @@ class UsersController extends AppController {
 		}
 	}
 
-	public function registerPartner(){		
+	public function registerPartner(){
 		if(!$this->Session->read('user'))
 			$this->redirect(array('controller'=>'Users', 'action'=>'login'));
-	
+
 		if($this->request->is('PUT')){
-			$data = $this->request->data;			
+			$data = $this->request->data;
 			if($this->User->save($data)){
 				$this->Session->setFlash('Update successful', 'success');
 				$this->redirect(array('action'=>'registerPartner'));

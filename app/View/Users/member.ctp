@@ -9,10 +9,10 @@
 				<div align="center">
 					<br>
 					<font size="2" face="verdana">
-						<?php 
+						<?php
 
 						?>
-						Welcome to your Account Overview <strong></strong> !! Server time: 20:46:11 2014-01-15
+						Welcome to your Account Overview <strong></strong> !! Server time: <?php echo date('H:i:s Y-m-d') ?>
 					</font>
 					<br><br>
 <table width="960" border="0" align="center">
@@ -22,7 +22,7 @@
 	  <table width="100%" border="0" cellpadding="2" cellspacing="0">
         <tbody><tr>
           	<td width="19%" rowspan="4">
-          		<?php echo $this->Html->image('avatar.jpg', array('width'=>'80', 'height'=>'80')); ?>        		
+          		<?php echo $this->Html->image('avatar.jpg', array('width'=>'80', 'height'=>'80')); ?>
         	</td>
 
           <td width="47%"><div align="left"><font size="2" face="verdana">Active Investments:</font></div></td>
@@ -86,92 +86,103 @@
 <h2>Payment System </h2>
 
 <table width="450" border="0" align="center">
-<form action="./member - dollarsflowsystem.com_files/member - dollarsflowsystem.com.htm" method="post"></form>
-<input type="hidden" name="depositsolid" value="depositsolid">
-<tbody><tr>
-   <td width="150"><div align="center"><strong>Processor</strong></div></td>
-   <td width="150"><div align="center"><strong>Value</strong></div></td>
-   <td width="150"><div align="center"><strong>Deposit</strong></div></td>
- </tr>
- <tr>
-    <td>
-    	<div align="center">
-    		<?php echo $this->Html->image('stp.jpg', array('width'=>'100', 'height'=>'38')); ?>
-    	</div>
-    </td>
-    <td><div align="center">
-<input type="text" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
-	</div></td>
-    <td><div align="center">
-<input type="submit" name="Submit" style="width:210px;" value="SOLIDTRUSTPAY ADD FUNDS">
-	</div></td>
- </tr>
-	
-  <tr>
-  <form action="" method="post"></form>
-  <input type="hidden" name="depositegopay" value="depositegopay">
-    <td>
-    	<div align="center">
-    		<?php echo $this->Html->image('egopay.jpg', array('width'=>'100', 'height'=>'38')); ?>
-    	</div>
-    </td>
-    <td><div align="center">
-<input type="text" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
-	</div></td>
-    <td><div align="center">
-<input type="submit" name="Submit" style="width:210px;" value="EGOPAY ADD FUNDS">
-	</div></td	>
-  </tr>
-	
-<tr>
-<form action="" method="post"></form>
-<input type="hidden" name="depositpm" value="depositpm">
-<td>
-	<div align="center">
-		<?php echo $this->Html->image('pm.jpg', array('width'=>'100', 'height'=>'38')); ?>
-	</div>
-</td>
-<td><div align="center">
-<input type="text" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
-</div></td>
-<td><div align="center">
-<input type="submit" name="Submit" style="width:210px;" value="PERFECT MONEY ADD FUNDS">
-</div></td>
-</tr>
-	
-<tr>
-<form action="" method="post"></form>
-<input type="hidden" name="depositneteller" value="depositneteller">
-<td>
-	<div align="center">
-		<?php echo $this->Html->image('neteller.jpg', array('width'=>'100', 'height'=>'38')); ?>		
-	</div>
-</td>
-<td><div align="center">
-<input type="text" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
-</div></td>
-<td><div align="center">
-<input type="submit" name="Submit" style="width:210px;" value="NETELLER ADD FUNDS">
-</div></td>
-</tr>
-	
-<tr>
-<form action="" method="post"></form>
-<input type="hidden" name="depositaccbalance" value="depositaccbalance">
-<td>
-	<div align="center">
-		<?php echo $this->Html->image('balance.jpg', array('width'=>'100', 'height'=>'38')); ?>		
-	</div>
-</td>
-<td><div align="center">
-<input type="text" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
-</div></td>
-<td><div align="center">
-<input type="submit" name="Submit" style="width:210px;" value="DEPOSIT VIA ACCOUNT BALANCE">
-</div></td>
-</tr>
-	
-</tbody></table>
+    <tbody>
+        <tr>
+           <td width="150"><div align="center"><strong>Processor</strong></div></td>
+           <td width="150"><div align="center"><strong>Value</strong></div></td>
+           <td width="150"><div align="center"><strong>Deposit</strong></div></td>
+        </tr>
+        <tr>
+            <form action="" method="post">
+                <td align="center">
+        		  <?php echo $this->Html->image('stp.jpg', array('width'=>'100', 'height'=>'38')); ?>
+                </td>
+                <td align="center">
+                    <input type="text" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
+    	        </td>
+                <td align="center">
+                    <input type="submit" name="Submit" style="width:210px;" value="SOLIDTRUSTPAY ADD FUNDS">
+    	        </td>
+            </form>
+        </tr>
+        <tr>
+            <form action="https://www.egopay.com/payments/pay/express/?hash=T7BF6ZY82ZYPV9X8UIIDABWYMU9UGEH58aAjoFLFzUjtuZcX3P8WCUeDS0om1QRkqsB-B40di8qXUSE1Xlj4hcJ7zqwMf7izj4ivnRZkf7shJSwOkKhWwguGuy92DMUvlf3uDBlv9Bl0sMlaWuwa4HH991OGrMeoTjrV_vSzntry2E91UeiuKHkL5XndHLwrNoFl6q__m6vTNR4fTYHYGgzjStiKOPRRWXeGVbFy_KpCKqhufi0fhA16_4yDBRBtbd7HbqOcffZC7_E1bAATpFeYNumul59zFhK8Rt444F0W6V5NYf1u11JM_c_I6kdVQEbl-3Kw6XwK227BuqrPrnLhQYqHNr3hLZLK5cqJk1KItVGCPmqvOA" method="post" target="_blank">
+                <td align="center">
+                    <?php echo $this->Html->image('egopay_new.jpg', array('width'=>'100', 'height'=>'38')); ?>
+                </td>
+                <td align="center">
+                    <input type="text" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
+    	        </td>
+                <td  align="center">
+                    <input type="submit" name="Submit" style="width:210px;" value="EGOPAY ADD FUNDS">
+    	       </td>
+            </form>
+        </tr>
+
+        <tr>
+            <form action="" method="post">
+                <input type="hidden" name="depositpm" value="depositpm">
+                <td  align="center">
+                	<?php echo $this->Html->image('pm.jpg', array('width'=>'100', 'height'=>'38')); ?>
+                </td>
+                <td align="center">
+                    <input type="text" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
+                </td>
+                <td align="center">
+                    <input type="submit" name="Submit" style="width:210px;" value="PERFECT MONEY ADD FUNDS">
+                </td>
+            </form>
+        </tr>
+
+        <tr>
+            <form action="" method="post">
+                <input type="hidden" name="depositneteller" value="depositneteller">
+                <td  align="center">
+                	<?php echo $this->Html->image('neteller.jpg', array('width'=>'100', 'height'=>'38')); ?>
+                </td>
+                <td align="center">
+                    <input type="text" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
+                </td>
+                <td align="center">
+                    <input type="submit" name="Submit" style="width:210px;" value="NETELLER ADD FUNDS">
+                </td>
+            </form>
+        </tr>
+
+        <tr>
+            <form action="" method="post">
+                <td align="center">
+                	<?php echo $this->Html->image('balance.jpg', array('width'=>'100', 'height'=>'38')); ?>
+                </td>
+                <td align="center">
+                    <input type="text" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
+                </td>
+                <td align="center">
+                    <input type="submit" name="Submit" style="width:210px;" value="DEPOSIT VIA ACCOUNT BALANCE">
+                </td>
+            </form>
+        </tr>
+
+        <tr>
+            <form action="https://www.okpay.com/process.html" method="post" target="_blank">
+                <input type="hidden" name="ok_receiver" value="OK676429149"/>
+                <input type="hidden" name="ok_item_1_name" value="Forexpam"/>
+                <input type="hidden" name="ok_currency" value="USD"/>
+                <input type="hidden" name="ok_item_1_type" value="service"/>
+
+                <td align="center">
+                    <?php echo $this->Html->image('okpay.png', array('width'=>'100', 'height'=>'38')); ?>
+                </td>
+                <td align="center">
+                    <input type="text" name="amount_okpay" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
+                </td>
+                <td align="center">
+                    <input type="submit" name="Submit" style="width:210px;" value="OKPAY Payment">
+                </td>
+            </form>
+        </tr>
+    </tbody>
+</table>
 
 <div align="center">
 <font color="grey" size="2" face="verdana">Please enter any amount between <strong>$1.00 - $5,000.00</strong>

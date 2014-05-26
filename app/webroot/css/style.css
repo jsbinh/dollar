@@ -1,10 +1,10 @@
 /* Website template by freewebsitetemplates.com */
 html{
 	overflow: scroll;
-	overflow-x: auto; 
+	overflow-x: auto;
 }
 body {
-	background-color: #e2e2e2;
+	/*background-color: #e2e2e2;*/
 	min-width: 960px;
 	margin: 0;
 }
@@ -205,9 +205,9 @@ h2 {
 	text-transform: uppercase;
 }
 p {
-	color: #626262;
+	/*color: #626262;
 	font: 14px/24px Arial, Helvetica, sans-serif;
-	margin: 0 0 24px;
+	margin: 0 0 24px;*/
 }
 p a {
 	color: #626262;

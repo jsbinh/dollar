@@ -2,7 +2,7 @@
 <div class="clearfix">
 
 <center>
-<shadow><table height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<table height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 <tbody><tr>
 <td valign="top">
 
@@ -15,22 +15,26 @@
     <td>
   
 <h2 align="center">How It Works</h2>  
-  
-  
-  
-  
 
 
 <table width="800" border="0" align="center" cellpadding="10" cellspacing="0">
   <tbody><tr>
-    <td valign="top">
-        <?php echo $this->Html->image('1.png', array('width'=>'123', 'height'=>'111')); ?> 
-    </td>
+
     <td valign="top"><div align="justify"><font size="2" face="verdana">
-When you join our program and do some investing your name goes into a position in our line of investment. When your name is at the top of this line you get 200% of your investment directly into your account SolidTrustPay.<br>
-Also we use the Stock Market and Forex to keep the system sustainable and paying.<br>
-We understand the need to maintain a sustainable and lasting is a big challenge. Then we will use our knowledge and analysis to keep a large group of investments sustainable and profitable for everyone.
-Join now and enjoy these great opportunity to make money easily.</font></div>
+<jutify>
+                <p>
+                    The PAMM system provides for collective Investment Opportunities in an account of a trader đó employment and financial resources of the joint in Forex trading . The profit derived from financial operations is distributed Among the traders and Investors . Merely A company controls the Investment Brokerage process monitoring and recording trades shares and profits .Within the system of PAMM accounts one can act as a managing trader , investor or partner . Investors choose the most successful trader to give Funds to either using the PAMM account monitoring list or with the help of a partner . A partner is an intermediary PAMM Between a skilled trader and an investor owning Funds . A PAMM partner receives part of the profit made ​​by traders as a reward for having Attracted money in a PAMM account .
+                </p>
+                <p>
+                    A PAMM trader employs the money entrusted in trading on Forex . A Furniture Brokerage company guarantees it is impossible to withdraw the Funds from the PAMM trader account : They are only available for trading . The profit is automatically distributed Among the Participants of the PAMM account on đó a trade was made ​​proportionally to the shares Invested .
+                </p>
+                <p>
+                    The PAMM system Enables an investor to get guaranteed profit calculated automatically without Carrying out any operations . Moreover , in comparison to keeping money in banks , PAMM accounts Brings Investing in higher profit , vài Allows choosing one trader or traders to manage Invested money on Forex and Enables Investors Funds to deposit and withdraw at any time .
+                </p>
+                <p>
+                    A PAMM trader can manage joint financial resources on one account and gain profit from making trades on Both Forex and managing Invested money
+                </p>
+</font></div>
 <div align="center"></div>    </td>
    </tr>
 </tbody></table>
@@ -72,7 +76,7 @@ Join now and enjoy these great opportunity to make money easily.</font></div>
                 <?php echo $this->Html->image('2.png', array('width'=>'12', 'height'=>'17')); ?>
             </td>
             <td><font size="2" face="verdana">Susteinable Investment Plan</font></td>
-            <td valign="top">               
+            <td valign="top">
                 <?php echo $this->Html->image('2.png', array('width'=>'12', 'height'=>'17')); ?>
             </td>
             <td><shadow><font size="2" face="verdana">Referral commissions</font> </shadow></td>
@@ -100,6 +104,6 @@ Join now and enjoy these great opportunity to make money easily.</font></div>
 </td>
 </tr>
 </tbody></table>  
-</shadow>
+
 </center>
 </div>

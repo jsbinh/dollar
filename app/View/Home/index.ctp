@@ -14,7 +14,6 @@
 				<?php echo $this->Html->image('family-large.jpg', array('alt' => 'Img', 'height' => '382', 'width' => '100%')); ?>
 			</div>
 		</div>
-		
 		<div class="featured">
 			<h2>Why Choose Us?</h2>
 			<ul class="clearfix">

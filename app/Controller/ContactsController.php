@@ -9,7 +9,7 @@ class ContactsController extends AppController {
 		if($this->request->is('post') || $this->request->is('put')){			
 			if($this->Contact->customValidate()){
 				if($this->Contact->save($this->request->data)){
-					$this->_sendEmai($this->request->data);					
+					$this->_sendEmail($this->request->data);					
 					$this->Session->setFlash('Send message successful');
 					$this->redirect(array('action'=>'index'));
 				}
@@ -17,7 +17,7 @@ class ContactsController extends AppController {
 		}
 	}
 
-	public function _sendEmai($data){
+	public function _sendEmail($data){
 		$send_to_email = Configure::read('send_to_email');
 		$Email = new CakeEmail('default');
       	$subject = 'Contact from PROFITDOLLAR200';
