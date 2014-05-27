@@ -8,6 +8,9 @@ class Withdraw extends AppModel {
   		'email' => array(
             'notEmpty' => array(
                 'rule' => array('notEmpty')
+            ),
+            'email' => array(
+                'rule' => array('email'),
             )
         ),
         'amount' => array(

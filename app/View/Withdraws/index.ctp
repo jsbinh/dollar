@@ -23,7 +23,7 @@
             <tr>
                 <td align="center">
                 	<?php echo $this->Html->image('stp.jpg', array('width'=>'100', 'height'=>'38')) ?>
-                    <?php echo $this->Form->hidden('pay_id', array('value'=>'1')) ?>
+                    <?php echo $this->Form->hidden('solidTrust_id', array('value'=>'1')) ?>
                 </td>
                 <td align="center">
                     <?php echo $this->Form->input('solidTrust_email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
@@ -39,7 +39,7 @@
             <tr>
                 <td align="center">
                     <?php echo $this->Html->image('egopay.jpg', array('width'=>'100', 'height'=>'38')) ?>
-                    <?php echo $this->Form->hidden('pay_id', array('value'=>'2')) ?>
+                    <?php echo $this->Form->hidden('egopay_id', array('value'=>'2')) ?>
                 </td>
                 <td align="center">
                     <?php echo $this->Form->input('egopay_email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
@@ -54,7 +54,7 @@
             <tr>
                 <td align="center">
                     <?php echo $this->Html->image('pm.jpg', array('width'=>'100', 'height'=>'38')) ?>
-                    <?php echo $this->Form->hidden('pay_id', array('value'=>'3')) ?>
+                    <?php echo $this->Form->hidden('pefect_id', array('value'=>'3')) ?>
                 </td>
                 <td align="center">
                     <?php echo $this->Form->input('pefect_email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
@@ -69,7 +69,7 @@
             <tr>
                 <td align="center">
                     <?php echo $this->Html->image('neteller.jpg', array('width'=>'100', 'height'=>'38')) ?>
-                    <?php echo $this->Form->hidden('pay_id', array('value'=>'4')) ?>
+                    <?php echo $this->Form->hidden('neteller_id', array('value'=>'4')) ?>
                 </td>
                 <td align="center">
                     <?php echo $this->Form->input('neteller_email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
@@ -84,7 +84,7 @@
             <tr>
                 <td align="center">
                     <?php echo $this->Html->image('okpay.png', array('width'=>'100', 'height'=>'38')) ?>
-                    <?php echo $this->Form->hidden('pay_id', array('value'=>'6')) ?>
+                    <?php echo $this->Form->hidden('okpay_id', array('value'=>'6')) ?>
                 </td>
                 <td align="center">
                     <?php echo $this->Form->input('okpay_email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
