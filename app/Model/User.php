@@ -38,12 +38,12 @@ class User extends AppModel {
 			),
 			'password' => array(
 				'required' => array(
-                    'rule' => 'notEmpty',                    
+                    'rule' => 'notEmpty',
                     'message' => __('Password is not empty!'),
                 ),
 				'confirm' => array(
                     'rule' => array('isConfirmPassword'),
-                    'message' => __('Confirm password is not equal!'),                    
+                    'message' => __('Confirm password is not equal!'),
                 ),
 			),
 			'email' => array(

@@ -51,63 +51,56 @@ $cakeDescription = 'Home - forexpam.com';
 			          		<?php echo $this->Html->image('logo.png', array('alt' => 'LOGO', 'height' => 52, 'width' => 320)); ?>
 			          	</div>
 			        </td>
-				    <td width="640">
-					    <div align="center">
-					        <?php
-					        	echo $this->Html->link('Home', array('controller' =>'Home', 'action'=>'index'), array('class' => 'myButton'));
-						        echo ' ';
-						        echo $this->Html->link('Details', array('controller' =>'Home', 'action'=>'details'), array('class' => 'myButton'));
-						        echo ' ';
-						        echo $this->Html->link('Faq', array('controller' =>'Home', 'action'=>'faq'), array('class' => 'myButton'));
-						        echo ' ';
-						        echo $this->Html->link('Register', array('controller' =>'Users', 'action'=>'register'), array('class' => 'myButton'));
-						        echo ' ';
-						        echo $this->Html->link('Login', array('controller' =>'Users', 'action'=>'login'), array('class' => 'myButton'));
-						        echo ' ';
-						        echo $this->Html->link('Investments', array('controller' =>'Investments', 'action'=>'index'), array('class' => 'myButton'));
-						        echo ' ';
-						        echo $this->Html->link('Payments', array('controller' =>'Payments', 'action'=>'index'), array('class' => 'myButton'));
-						        echo ' ';
-						        echo $this->Html->link('Partners', array('controller' =>'Partners', 'action'=>'index'), array('class' => 'myButton'));
-						        echo ' ';
-						        echo $this->Html->link('Contact', array('controller' =>'Contacts', 'action'=>'index'), array('class' => 'myButton'));
-						        echo ' ';
-
-					        ?>
-						</div>
+				    <td width="640" align="center">
+				        <?php
+				        	echo $this->Html->link('Home', array('controller' =>'Home', 'action'=>'index'), array('class' => 'myButton'));
+					        echo ' ';
+					        echo $this->Html->link('Details', array('controller' =>'Home', 'action'=>'details'), array('class' => 'myButton'));
+					        echo ' ';
+					        echo $this->Html->link('Faq', array('controller' =>'Home', 'action'=>'faq'), array('class' => 'myButton'));
+					        echo ' ';
+					        echo $this->Html->link('Register', array('controller' =>'Users', 'action'=>'register'), array('class' => 'myButton'));
+					        echo ' ';
+					        echo $this->Html->link('Login', array('controller' =>'Users', 'action'=>'login'), array('class' => 'myButton'));
+					        echo ' ';
+					        echo $this->Html->link('Investments', array('controller' =>'Investments', 'action'=>'index'), array('class' => 'myButton'));
+					        echo ' ';
+					        echo $this->Html->link('Payments', array('controller' =>'Payments', 'action'=>'index'), array('class' => 'myButton'));
+					        echo ' ';
+					        echo $this->Html->link('Partners', array('controller' =>'Partners', 'action'=>'index'), array('class' => 'myButton'));
+					        echo ' ';
+					        echo $this->Html->link('Contact', array('controller' =>'Contacts', 'action'=>'index'), array('class' => 'myButton'));
+					        echo ' ';
+				        ?>
 					</td>
 					<?php
 					}else{ ?>
-				          	<td>
-				          		<div align="center">
-				          			<?php
-				          				echo $this->Html->link('My account', array('controller' =>'Users', 'action'=>'member'), array('class' => 'myButtonlogado'));
-					        			echo ' ';
-					        			echo $this->Html->link('Profile', array('controller' =>'Users', 'action'=>'profile'), array('class' => 'myButtonlogado'));
-					        			echo ' ';
-					        			echo $this->Html->link('History', array('controller' =>'Users', 'action'=>'history'), array('class' => 'myButtonlogado'));
-					        			echo ' ';
-					        			echo $this->Html->link('Withdraw', array('controller' =>'Users', 'action'=>'withdraw'), array('class' => 'myButtonlogado'));
-					        			echo ' ';
-				          			?>
-
-									  <a href="" class="myButtonlogado">Referrals</a>
-
-									<?php
-										echo $this->Html->link('Investments', array('controller' =>'Investments', 'action'=>'admin_index'), array('class' => 'myButtonlogado'));
-					        			echo ' ';
-										echo $this->Html->link('Payments', array('controller' =>'Payments', 'action'=>'index'), array('class' => 'myButtonlogado'));
-						        		//echo ' ';
-										//echo $this->Html->link('Tools', array('controller' =>'Users', 'action'=>'tools'), array('class' => 'myButtonlogado'));
-					        			echo ' ';
-										echo $this->Html->link('Partners', array('controller' =>'Partners', 'action'=>'index'), array('class' => 'myButtonlogado'));
-					        			echo ' ';
-										echo $this->Html->link('Contact', array('controller' =>'Contacts', 'action'=>'index'), array('class' => 'myButtonlogado'));
-					        			echo ' ';
-				          				echo $this->Html->link('Logout', array('controller' =>'Users', 'action'=>'logout'), array('class' => 'myButtonlogado'));
-					        			echo ' ';
-				          			?>
-						  		</div>
+				          	<td align="center">
+			          			<?php
+			          				echo $this->Html->link('My account', array('controller' =>'Users', 'action'=>'member'), array('class' => 'myButtonlogado'));
+				        			echo ' ';
+				        			echo $this->Html->link('Profile', array('controller' =>'Users', 'action'=>'profile'), array('class' => 'myButtonlogado'));
+				        			echo ' ';
+				        			echo $this->Html->link('History', array('controller' =>'Users', 'action'=>'history'), array('class' => 'myButtonlogado'));
+				        			echo ' ';
+				        			echo $this->Html->link('Withdraw', array('controller' =>'Withdraws', 'action'=>'index'), array('class' => 'myButtonlogado'));
+				        			echo ' ';
+			          			?>
+								  <a href="" class="myButtonlogado">Referrals</a>
+								<?php
+									echo $this->Html->link('Investments', array('controller' =>'Investments', 'action'=>'admin_index'), array('class' => 'myButtonlogado'));
+				        			echo ' ';
+									echo $this->Html->link('Payments', array('controller' =>'Payments', 'action'=>'index'), array('class' => 'myButtonlogado'));
+					        		//echo ' ';
+									//echo $this->Html->link('Tools', array('controller' =>'Users', 'action'=>'tools'), array('class' => 'myButtonlogado'));
+				        			echo ' ';
+									echo $this->Html->link('Partners', array('controller' =>'Partners', 'action'=>'index'), array('class' => 'myButtonlogado'));
+				        			echo ' ';
+									echo $this->Html->link('Contact', array('controller' =>'Contacts', 'action'=>'index'), array('class' => 'myButtonlogado'));
+				        			echo ' ';
+			          				echo $this->Html->link('Logout', array('controller' =>'Users', 'action'=>'logout'), array('class' => 'myButtonlogado'));
+				        			echo ' ';
+			          			?>
 						  	</td>
 					<?php } ?>
 			       </tr>
@@ -121,41 +114,36 @@ $cakeDescription = 'Home - forexpam.com';
 	</div>
 		<div id="footer">
 			<div id="footnote">
-				<div class="clearfix">
-					<table width="960" height="22" border="0" align="center">
-					  <tbody>
-						  	<tr>
-							    <td width="50%">
-									<div align="left">
-								  		<font size="2" face="verdana">
-								  			<shadowwhite>
-								  			<?php
-								  				echo $this->Html->link('Terms', array('controller' =>'Home', 'action'=>'tos'));
-								  				echo '&nbsp;&nbsp';
-								  				echo $this->Html->link('Fees', array('controller' =>'Home', 'action'=>'fees'));
-								  				echo '&nbsp;&nbsp';
-								  				echo $this->Html->link('Certificate Incorporation', array('controller' =>'Home', 'action'=>'certificateIncorporation'));
-								  				echo '&nbsp;&nbsp';
-								  				echo $this->Html->link('Certificate Trading', array('controller' =>'Home', 'action'=>'certificateTrading'));
-								  				echo '&nbsp;&nbsp';
-								  			?>
-								  			</shadowwhite>
-								  		</font>
-								  	</div>
-								</td>
-							    <td width="50%">
-							    	<div align="right">
-										<font size="2" face="verdana" color="#fff">
-											<shadowwhite>
-												©2014 -2015 All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-											</shadowwhite>
-										</font>
-									</div>
-								</td>
-						  	</tr>
-						</tbody>
-					</table>
-				</div>
+				<div class="clearfix"></div>
+				<table width="960" height="22" border="0" align="center">
+				  <tbody>
+					  	<tr>
+						    <td width="50%" align="left">
+						  		<font size="2" face="verdana">
+						  			<shadowwhite>
+						  			<?php
+						  				echo $this->Html->link('Terms', array('controller' =>'Home', 'action'=>'tos'));
+						  				echo '&nbsp;&nbsp';
+						  				echo $this->Html->link('Fees', array('controller' =>'Home', 'action'=>'fees'));
+						  				echo '&nbsp;&nbsp';
+						  				echo $this->Html->link('Certificate Incorporation', array('controller' =>'Home', 'action'=>'certificateIncorporation'));
+						  				echo '&nbsp;&nbsp';
+						  				echo $this->Html->link('Certificate Trading', array('controller' =>'Home', 'action'=>'certificateTrading'));
+						  				echo '&nbsp;&nbsp';
+						  			?>
+						  			</shadowwhite>
+						  		</font>
+							</td>
+						    <td width="50%" align="right">
+								<font size="2" face="verdana" color="#fff">
+									<shadowwhite>
+										©2014 -2015 All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									</shadowwhite>
+								</font>
+							</td>
+					  	</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 
