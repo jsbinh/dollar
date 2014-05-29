@@ -23,13 +23,13 @@
             <tr>
                 <td align="center">
                 	<?php echo $this->Html->image('stp.jpg', array('width'=>'100', 'height'=>'38')) ?>
-                    <?php echo $this->Form->hidden('solidTrust_id', array('value'=>'1')) ?>
+                    <?php echo $this->Form->hidden('SolidTrust.pay_name', array('value'=>'SolidTrust')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('solidTrust_email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
+                    <?php echo $this->Form->input('SolidTrust.email', array('type'=>'email', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('solidTrust_amount', array('type'=>'text', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00')) ?>
+                    <?php echo $this->Form->input('SolidTrust.amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00')) ?>
                 </td>
             	<td align="center">
                     <?php echo $this->Form->submit('INSTANT WITHDRAW', array('style'=>'height:40px;')); ?>
@@ -39,13 +39,13 @@
             <tr>
                 <td align="center">
                     <?php echo $this->Html->image('egopay.jpg', array('width'=>'100', 'height'=>'38')) ?>
-                    <?php echo $this->Form->hidden('egopay_id', array('value'=>'2')) ?>
+                    <?php echo $this->Form->hidden('Egopay.pay_name', array('value'=>'Egopay')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('egopay_email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
+                    <?php echo $this->Form->input('Egopay.email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('egopay_amount', array('type'=>'text', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00')) ?>
+                    <?php echo $this->Form->input('Egopay.amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00')) ?>
                 </td>
                 <td align="center">
                     <?php echo $this->Form->submit('INSTANT WITHDRAW', array('style'=>'height:40px;')); ?>
@@ -54,13 +54,13 @@
             <tr>
                 <td align="center">
                     <?php echo $this->Html->image('pm.jpg', array('width'=>'100', 'height'=>'38')) ?>
-                    <?php echo $this->Form->hidden('pefect_id', array('value'=>'3')) ?>
+                    <?php echo $this->Form->hidden('PerfectMoney.pay_name', array('value'=>'PerfectMoney')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('pefect_email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
+                    <?php echo $this->Form->input('PerfectMoney.email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('pefect_amount', array('type'=>'text', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00')) ?>
+                    <?php echo $this->Form->input('PerfectMoney.amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00')) ?>
                 </td>
                 <td align="center">
                     <?php echo $this->Form->submit('INSTANT WITHDRAW', array('style'=>'height:40px;')); ?>
@@ -69,13 +69,13 @@
             <tr>
                 <td align="center">
                     <?php echo $this->Html->image('neteller.jpg', array('width'=>'100', 'height'=>'38')) ?>
-                    <?php echo $this->Form->hidden('neteller_id', array('value'=>'4')) ?>
+                    <?php echo $this->Form->hidden('Neteller.pay_name', array('value'=>'Neteller')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('neteller_email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
+                    <?php echo $this->Form->input('Neteller.email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('neteller_amount', array('type'=>'text', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00')) ?>
+                    <?php echo $this->Form->input('Neteller.amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00')) ?>
                 </td>
                 <td align="center">
                     <?php echo $this->Form->submit('INSTANT WITHDRAW', array('style'=>'height:40px;')); ?>
@@ -84,13 +84,13 @@
             <tr>
                 <td align="center">
                     <?php echo $this->Html->image('okpay.png', array('width'=>'100', 'height'=>'38')) ?>
-                    <?php echo $this->Form->hidden('okpay_id', array('value'=>'6')) ?>
+                    <?php echo $this->Form->hidden('Okpay.pay_name', array('value'=>'Okpay')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('okpay_email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
+                    <?php echo $this->Form->input('Okpay.email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('okpay_amount', array('type'=>'text', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00')) ?>
+                    <?php echo $this->Form->input('Okpay.amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00')) ?>
                 </td>
                 <td align="center">
                     <?php echo $this->Form->submit('INSTANT WITHDRAW', array('style'=>'height:40px;')); ?>

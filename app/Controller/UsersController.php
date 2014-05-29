@@ -12,6 +12,7 @@ class UsersController extends AppController {
 	public function register() {
 		if($this->request->is('POST') || $this->request->is('PUT')){
 			if($this->User->customValidate()){
+				$this->User->create();
 				if($this->User->save($this->request->data)){
 					$this->_sendEmailRegister($this->request->data);
 					$this->Session->setFlash('Register successful!');

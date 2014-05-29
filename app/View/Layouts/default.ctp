@@ -17,7 +17,7 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-$cakeDescription = 'Home - forexpam.com';
+$cakeDescription = 'Forexpam.com';
 ?>
 <!DOCTYPE html>
 <html>
@@ -115,34 +115,39 @@ $cakeDescription = 'Home - forexpam.com';
 		<div id="footer">
 			<div id="footnote">
 				<div class="clearfix"></div>
-				<table width="960" height="22" border="0" align="center">
-				  <tbody>
-					  	<tr>
-						    <td width="50%" align="left">
-						  		<font size="2" face="verdana">
-						  			<shadowwhite>
-						  			<?php
-						  				echo $this->Html->link('Terms', array('controller' =>'Home', 'action'=>'tos'));
-						  				echo '&nbsp;&nbsp';
-						  				echo $this->Html->link('Fees', array('controller' =>'Home', 'action'=>'fees'));
-						  				echo '&nbsp;&nbsp';
-						  				echo $this->Html->link('Certificate Incorporation', array('controller' =>'Home', 'action'=>'certificateIncorporation'));
-						  				echo '&nbsp;&nbsp';
-						  				echo $this->Html->link('Certificate Trading', array('controller' =>'Home', 'action'=>'certificateTrading'));
-						  				echo '&nbsp;&nbsp';
-						  			?>
-						  			</shadowwhite>
-						  		</font>
-							</td>
-						    <td width="50%" align="right">
-								<font size="2" face="verdana" color="#fff">
-									<shadowwhite>
-										©2014 -2015 All rights reserved.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									</shadowwhite>
-								</font>
-							</td>
-					  	</tr>
-					</tbody>
+				<table width="960" height="30" border="0" align="center">
+				  	<tr>
+					    <td >
+					  		<font size="2" face="verdana">
+					  			<shadowwhite>
+					  			<?php
+					  				echo $this->Html->link('Terms', array('controller' =>'Home', 'action'=>'tos'));
+					  				echo '&nbsp;&nbsp';
+					  				echo $this->Html->link('Fees', array('controller' =>'Home', 'action'=>'fees'));
+					  				echo '&nbsp;&nbsp';
+					  				echo $this->Html->link('Certificate Incorporation', array('controller' =>'Home', 'action'=>'certificateIncorporation'));
+					  				echo '&nbsp;&nbsp';
+					  				echo $this->Html->link('Certificate Trading', array('controller' =>'Home', 'action'=>'certificateTrading'));
+					  				echo '&nbsp;&nbsp';
+					  			?>
+					  			</shadowwhite>
+					  		</font>
+						</td>
+					    <td align="right" >
+		    				<font size="2" face="verdana" color="#fff">
+								<shadowwhite>
+									©2014 -2015 All rights reserved.
+								</shadowwhite>
+							</font>
+						</td>
+				  	</tr>
+                    <tr style="background-color: none !important">
+                        <td colspan="2">
+                            <div align="center">
+                                <?php echo $this->Html->image('footer.png'); ?>
+                            </div>
+                        </td>
+                    </tr>
 				</table>
 			</div>
 		</div>

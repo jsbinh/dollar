@@ -5,16 +5,12 @@
 <table height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 	<tbody>
 		<tr>
-			<td valign="top">
-				<div align="center">
-					<br>
-					<font size="2" face="verdana">
-						<?php
-
-						?>
-						Welcome to your Account Overview <strong></strong> !! Server time: <?php echo date('H:i:s Y-m-d') ?>
-					</font>
-					<br><br>
+			<td valign="top" align="center">
+				<br>
+				<font size="2" face="verdana">
+					Welcome to your Account Overview <strong></strong> !! Server time: <?php echo date('H:i:s Y-m-d') ?>
+				</font>
+				<br><br>
 <table width="960" border="0" align="center">
   <tbody><tr>
     <td width="474" valign="top"><div align="center">
@@ -25,7 +21,7 @@
           		<?php echo $this->Html->image('avatar.jpg', array('width'=>'80', 'height'=>'80')); ?>
         	</td>
 
-          <td width="47%"><div align="left"><font size="2" face="verdana">Active Investments:</font></div></td>
+          <td width="47%" align="left"><font size="2" face="verdana">Active Investments:</font></td>
 
           <td width="34%"><div align="center"><font size="3" face="verdana" color="grey"><strong>$0.00</strong></font></div></td>
 
@@ -120,16 +116,28 @@
         </tr>
 
         <tr>
-            <form action="" method="post">
-                <input type="hidden" name="depositpm" value="depositpm">
+            <form action="https://perfectmoney.is/api/step1.asp" method="post" target="blank">
+                <input type="hidden" name="PAYEE_ACCOUNT" value="U1735086">
+                <input type="hidden" name="PAYEE_NAME" value="Forexpam Inc">
+                <input type="hidden" name="PAYMENT_ID" value="Forex system invest ">
+                <!-- <input type="text" name="PAYMENT_AMOUNT" value=""><BR> -->
+                <input type="hidden" name="PAYMENT_UNITS" value="USD">
+                <input type="hidden" name="STATUS_URL" value="admin@forexpam.com">
+                <input type="hidden" name="PAYMENT_URL" value="http://www.forexpam.com/members/paysuccess">
+                <input type="hidden" name="PAYMENT_URL_METHOD" value="LINK">
+                <input type="hidden" name="NOPAYMENT_URL" value="http://forexpam.com/member">
+                <input type="hidden" name="NOPAYMENT_URL_METHOD" value="LINK">
+                <input type="hidden" name="SUGGESTED_MEMO" value="">
+                <input type="hidden" name="BAGGAGE_FIELDS" value="">
+                <!-- <input type="submit" name="PAYMENT_METHOD" value="Pay Now!"> -->
                 <td  align="center">
                 	<?php echo $this->Html->image('pm.jpg', array('width'=>'100', 'height'=>'38')); ?>
                 </td>
                 <td align="center">
-                    <input type="text" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
+                    <input type="text" name="PAYMENT_AMOUNT" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
                 </td>
                 <td align="center">
-                    <input type="submit" name="Submit" style="width:210px;" value="PERFECT MONEY ADD FUNDS">
+                    <input type="submit" name="PAYMENT_METHOD" style="width:210px;" value="PERFECT MONEY ADD FUNDS">
                 </td>
             </form>
         </tr>
