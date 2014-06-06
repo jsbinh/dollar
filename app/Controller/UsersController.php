@@ -112,6 +112,7 @@ class UsersController extends AppController {
 		if(!$this->Session->read('user')){
 			$this->redirect(array('controller'=>'Users', 'action'=>'login'));
 		}
+		$this->set('user', $this->Session->read('user'));
 
 	}
 
@@ -133,6 +134,9 @@ class UsersController extends AppController {
 			if($data['User']['neteller'] == 'none'){
 				$data['User']['neteller'] = 0;
 			}
+            if($data['User']['okpay'] == 'none'){
+                $data['User']['okpay'] = 0;
+            }
 			if(!empty($data['User']['newpassword'])){
 				$data['User']['password'] = $data['User']['newpassword'];
 			}
@@ -160,7 +164,8 @@ class UsersController extends AppController {
 				$this->Session->setFlash('Update error', 'error');
 			}
 		}
-		$this->request->data = $this->Session->read('user');
+		$user = $this->Session->read('user');
+		$this->request->data = $this->User->findById($user['User']['id']);
 	}
 
 	public function tools(){

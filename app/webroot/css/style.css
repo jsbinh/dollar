@@ -43,13 +43,14 @@ img {
 }
 /*------------ Sprites ------------*/
 .more, .subscribe, input[type='submit'] {
-	background: url(../img/interface.png) no-repeat;
+	/*background: url(../img/interface.png) no-repeat;*/
+	background-color: #296F3A;
 }
 .phone, .mail, .home, .fax, #footnote .connect a {
 	background: url(../img/icons.png) no-repeat;
 }
 .frame1, .frame2, .frame3, .frame4, .frame5, .news > li {
-	background: url(../img/frames.png) no-repeat;
+	/*background: url(../img/frames.png) no-repeat;*/
 }
 .more, .subscribe, input[type='submit'] {
 	background-position: -107px 0;
@@ -128,7 +129,7 @@ img {
 }
 /*------------ HEADER ------------*/
 #header {
-	background: #4e5944 url(../img/bg-header.jpg) repeat-x left bottom;
+	background: #19361E repeat-x left bottom;
 	padding: 9px 0 9px;
 }
 /** logo **/
@@ -217,7 +218,7 @@ p a:hover {
 }
 /** Adbox **/
 #adbox {
-	background: url(../img/bg-adbox.png) no-repeat center bottom;
+	/*background: url(../img/bg-adbox.png) no-repeat center bottom;*/
 	border-bottom: 1px solid #fff;
 	padding-top: 15px;
 }
@@ -255,7 +256,7 @@ p a:hover {
 	margin: 0;
 }
 .highlight {
-	background: #eee url(../img/bg-highlight.jpg) repeat-x left bottom;
+	background: #eee  repeat-x left bottom;
 	border-bottom: 1px solid #fff;
 }
 .highlight .clearfix {
@@ -547,7 +548,7 @@ p a:hover {
 }
 /*------------ FOOTER ------------*/
 #footer {
-	background: #d9d9d9 url(../img/bg-footer.png) repeat-x left top;
+	background: #172B1A  repeat-x left top;
 	border-top: 2px solid #fff;
 }
 #footer .section {
@@ -558,7 +559,7 @@ p a:hover {
 	padding: 30px;
 }
 #footer .section h4 {
-	color: #626262;
+	/*color: #626262;*/
 	font: bold 12px/24px Arial, Helvetica, sans-serif;
 	margin: 0;
 	text-transform: uppercase;
@@ -574,7 +575,7 @@ p a:hover {
 	text-transform: uppercase;
 }
 #footnote {
-	background: url(../img/bg-footnote.jpg) repeat-x left top;
+	/*background: url(../img/bg-footnote.jpg) repeat-x left top;*/
 	border-top: 1px solid #fff;
 	padding: 6px 0 3px;
 }
@@ -614,7 +615,6 @@ p a:hover {
 }
 
 .myButton {
-        
         -moz-box-shadow:inset 0px 1px 0px 0px #495142;
         -webkit-box-shadow:inset 0px 1px 0px 0px #495142;
         box-shadow:inset 0px 1px 0px 0px #495142;
@@ -768,17 +768,15 @@ shadow {color: black; text-shadow: 1px 1px 0px rgba(150, 145, 150, 0.4);}
 /* button in login */
 
 .myButtonlogado {
-        
         -moz-box-shadow:inset 0px 1px 0px 0px #495142;
         -webkit-box-shadow:inset 0px 1px 0px 0px #495142;
         box-shadow:inset 0px 1px 0px 0px #495142;
-        
         background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6B765F), color-stop(1, #495142));
         background:-moz-linear-gradient(top, #6B765F 5%, #495142 100%);
         background:-webkit-linear-gradient(top, #6B765F 5%, #495142 100%);
         background:-o-linear-gradient(top, #6B765F 5%, #495142 100%);
         background:-ms-linear-gradient(top, #6B765F 5%, #495142 100%);
-        background:linear-gradient(to bottom, #6B765F 5%, #495142 100%);
+        background:linear-gradient(to bottom, #000000 5%, #495142 100%);
         filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6B765F', endColorstr='#495142',GradientType=0);
         
         background-color:#6B765F;
@@ -819,3 +817,45 @@ shadow {color: black; text-shadow: 1px 1px 0px rgba(150, 145, 150, 0.4);}
     .error-message{
     	color: #F78181;
     }
+.tranfer{
+	height: 35px;
+	width: 150px;
+	font-size: 22px;
+	text-align: center;
+	color: grey;
+}
+
+.alert-success {
+    background: url("../img/success.png") no-repeat scroll 10px 50% transparent;
+    font-weight: bold;
+    text-indent: 25px;
+}
+
+.alert-error {
+    background: url("../img/error.png") no-repeat scroll 10px 50% transparent;
+    font-weight: bold;
+    text-indent: 25px;
+}
+
+.alert-warning {
+    background: url("../img/wraning.ico") no-repeat scroll 5px 9px transparent;
+    font-weight: bold;
+    text-indent: 15px;
+}
+
+.submit-button{
+	cursor: pointer;
+	border: none;
+	height: 38px;
+	line-height: 38px;
+	background-color: #296F3A;
+	background-position: -107px 0;
+	color: #fff;
+	display: inline-block;
+	font: 12px/28px Arial, Helvetica, sans-serif;
+	width: 97px;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+	text-transform: uppercase;
+}

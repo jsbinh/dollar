@@ -31,9 +31,9 @@ $cakeDescription = 'Forexpam.com';
 	<?php
 		echo $this->Html->meta('icon');
 
-		echo $this->Html->css(array('style'));
+		echo $this->Html->css(array('jquery-ui', 'style', 'bootstrap', 'bootstrap.min', 'font-awesome', 'font-awesome.min'));
 
-		echo $this->Html->script(array('jquery.min', 'scrolltopcontrol'));
+		echo $this->Html->script(array('jquery', 'jquery-ui', 'bootstrap.min', 'scrolltopcontrol'));
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -141,16 +141,12 @@ $cakeDescription = 'Forexpam.com';
 							</font>
 						</td>
 				  	</tr>
-                    <tr style="background-color: none !important">
-                        <td colspan="2">
-                            <div align="center">
-                                <?php echo $this->Html->image('footer.png'); ?>
-                            </div>
-                        </td>
-                    </tr>
 				</table>
 			</div>
 		</div>
+        <div align="center" style="background-color: #172B1A;">
+            <?php echo $this->Html->image('footer.png'); ?>
+        </div>
 
 	<?php //echo $this->element('sql_dump'); ?>
 </body>

@@ -8,9 +8,60 @@
 			<td valign="top" align="center">
 				<br>
 				<font size="2" face="verdana">
-					Welcome to your Account Overview <strong></strong> !! Server time: <?php echo date('H:i:s Y-m-d') ?>
+					Welcome <strong> <?php echo $user['User']['username'] ?> </strong> !! Server time: <?php echo date('H:i:s Y-m-d') ?>
 				</font>
 				<br><br>
+
+<div>
+    <font size="2" face="verdana">
+        <h4><strong>Daily Profit - Results of the last 10 days</strong></h4>
+        <table width="95%"  style="background-color: #EFF5FB">
+            <tr style="font-size: 2; font-style: verdana">
+                <td width="11%" align="center">
+                    <strong>3.0%</strong> <br>
+                    2014-05-20
+                </td>
+                <td width="10%" align="center">
+                    <strong>3.0%</strong> <br>
+                    2014-05-20
+                </td>
+                <td width="10%" align="center">
+                    <strong>3.0%</strong> <br>
+                    2014-05-20
+                </td>
+                <td width="10%" align="center">
+                    <strong>3.0%</strong> <br>
+                    2014-05-20
+                </td>
+                <td width="10%" align="center">
+                    <strong>3.0%</strong> <br>
+                    2014-05-20
+                </td>
+                <td width="10%" align="center">
+                    <strong>3.0%</strong> <br>
+                    2014-05-20
+                </td>
+                <td width="10%" align="center">
+                    <strong>3.0%</strong> <br>
+                    2014-05-20
+                </td>
+                <td width="10%" align="center">
+                    <strong>3.0%</strong> <br>
+                    2014-05-20
+                </td>
+                <td width="10%" align="center">
+                    <strong>3.0%</strong> <br>
+                    2014-05-20
+                </td>
+                <td width="10%" align="center">
+                    <strong>3.0%</strong> <br>
+                    2014-05-20
+                </td>
+            </tr>
+        </table>
+    </font>
+</div>
+<br/>
 <table width="960" border="0" align="center">
   <tbody><tr>
     <td width="474" valign="top"><div align="center">
@@ -21,63 +72,77 @@
           		<?php echo $this->Html->image('avatar.jpg', array('width'=>'80', 'height'=>'80')); ?>
         	</td>
 
-          <td width="47%" align="left"><font size="2" face="verdana">Active Investments:</font></td>
+            <td width="47%" align="left">
+                <font size="2" face="verdana">Active Investments:</font>
+            </td>
 
-          <td width="34%"><div align="center"><font size="3" face="verdana" color="grey"><strong>$0.00</strong></font></div></td>
-
-        </tr>
-        <tr>
-
-          <td><div align="left"><font size="2" face="verdana">Total invested:</font></div></td>
-
-          <td><div align="center"><font size="3" face="verdana" color="grey"><strong>$0.00</strong></font></div></td>
+            <td width="34%" align="center">
+                <font size="3" face="verdana" color="grey"><strong>$0.00</strong></font>
+            </td>
 
         </tr>
         <tr>
+            <td align="left">
+                <font size="2" face="verdana">Total invested:</font>
+            </td>
+            <td align="center">
+                <font size="3" face="verdana" color="grey"><strong>$0.00</strong></font>
+            </td>
 
-          <td><div align="left"><font size="2" face="verdana">Total payments received:</font></div></td>
-
-          <td><div align="center"><font size="3" face="verdana" color="grey"><strong>$0.00</strong></font></div></td>
-
+        </tr>
+        <tr>
+            <td align="left">
+                <font size="2" face="verdana">Total payments received:</font>
+            </td>
+            <td align="center">
+                <font size="3" face="verdana" color="grey"><strong>$0.00</strong></font>
+            </td>
         </tr>
 		<tr>
-          <td><div align="left"><font size="2" face="verdana"><strong>Account Balance:</strong></font></div></td>
-          <td><div align="center"><font size="3" face="verdana" color="grey"><strong>$0.00</strong></font></div></td>
+            <td align="left">
+                <font size="2" face="verdana"><strong>Account Balance:</strong></font>
+            </td>
+            <td align="center">
+                <font size="3" face="verdana" color="grey"><strong>$0.00</strong></font>
+            </td>
         </tr>
-      </tbody></table>
+    </tbody>
+</table>
 
 <br>
 
 <font color="grey" size="2" face="verdana">
 	  <strong>Total referrals:</strong> 0 <strong>Total commissions received:</strong> $0.00<br>
-	  <strong>Your referral link:</strong> 
+	  <strong>Your referral link:</strong>
 	  </font>
-	
-	 <br><br>
-	 
-<h2>TRANSFER BALANCE FOR MEMBER</h2>	
-	  
-<div class="CSSTabletransfer">
-<table height="25" align="center">
-<form action="" method="post"></form>
-<input type="hidden" name="transferbf" value="transferbf">
-<tbody><tr>
-<td><div align="center"><input type="text" style="height:35px;width:150px;font-size:22px;text-align:center;color:grey;" name="transferbuser" placeholder="username" value=""></div></td>
-<td width="150"><div align="center"><input type="text" style="height:35px;width:144px;font-size:22px;text-align:center;color:grey;" name="transferbvalue" placeholder="0.00" value=""></div></td>
-<td width="50"><div align="center"><input type="submit" style="height:40px;width:150px;" name="Submit" value="TRANSFER BALANCE"></div></td>
-</tr>
 
-</tbody></table>
-</div>  
-	  
- 
+	 <br><br>
+
+<h2>TRANSFER BALANCE FOR MEMBER</h2>
+
+<div class="CSSTabletransfer">
+    <form action="" method="post">
+        <table height="25" align="center">
+            <input type="hidden" name="transferbf" value="transferbf">
+            <tr>
+                <td align="center">
+                    <input type="text" class="tranfer" name="transferbuser" placeholder="username" value="">
+                </td>
+                <td width="150" align="center">
+                    <input type="number" class="tranfer" name="transferbvalue" placeholder="0.00" value="" min="0">
+                </td>
+                <td width="50" align="center">
+                    <input type="submit" style="height:40px;width:150px;" name="Submit" value="TRANSFER BALANCE">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
     </div></td>
 
     <td width="470" valign="top">
 
 <center>
-
-
 
 <h2>Payment System </h2>
 
@@ -94,7 +159,7 @@
         		  <?php echo $this->Html->image('stp.jpg', array('width'=>'100', 'height'=>'38')); ?>
                 </td>
                 <td align="center">
-                    <input type="text" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
+                    <input type="number" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0">
     	        </td>
                 <td align="center">
                     <input type="submit" name="Submit" style="width:210px;" value="SOLIDTRUSTPAY ADD FUNDS">
@@ -102,12 +167,12 @@
             </form>
         </tr>
         <tr>
-            <form action="https://www.egopay.com/payments/pay/express/?hash=T7BF6ZY82ZYPV9X8UIIDABWYMU9UGEH58aAjoFLFzUjtuZcX3P8WCUeDS0om1QRkqsB-B40di8qXUSE1Xlj4hcJ7zqwMf7izj4ivnRZkf7shJSwOkKhWwguGuy92DMUvlf3uDBlv9Bl0sMlaWuwa4HH991OGrMeoTjrV_vSzntry2E91UeiuKHkL5XndHLwrNoFl6q__m6vTNR4fTYHYGgzjStiKOPRRWXeGVbFy_KpCKqhufi0fhA16_4yDBRBtbd7HbqOcffZC7_E1bAATpFeYNumul59zFhK8Rt444F0W6V5NYf1u11JM_c_I6kdVQEbl-3Kw6XwK227BuqrPrnLhQYqHNr3hLZLK5cqJk1KItVGCPmqvOA" method="post" target="_blank">
+            <form action="https://www.egopay.com/payments/pay/express/?hash=T7BF6ZY82ZYPV9X8UIIDABWYMU9UGEH5_TW7iaUasVZf-y3K2gW7ngPA5acPgpsOD2wBBHoQMbCXUSE1Xlj4hcJ7zqwMf7izj4ivnRZkf7shJSwOkKhWwguGuy92DMUvlf3uDBlv9Bl0sMlaWuwa4HH991OGrMeoTjrV_vSzntry2E91UeiuKHkL5XndHLwrNoFl6q__m6vTNR4fTYHYGgzjStiKOPRRWXeGVbFy_KpCKqhufi0fhA16_4yDBRBtbd7HbqOcffZC7_E1bAATpFeYNumul59zFhK8Rt444F0W6V5NYf1u11JM_c_I6kdVQEbl-3Kw6XwK227BuqrPrnLhQYqHNr3hLZLK5cqJk1KItVGCPmqvOA" method="post" target="_blank">
                 <td align="center">
                     <?php echo $this->Html->image('egopay_new.jpg', array('width'=>'100', 'height'=>'38')); ?>
                 </td>
                 <td align="center">
-                    <input type="text" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
+                    <input type="number" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="100" min="0">
     	        </td>
                 <td  align="center">
                     <input type="submit" name="Submit" style="width:210px;" value="EGOPAY ADD FUNDS">
@@ -134,36 +199,35 @@
                 	<?php echo $this->Html->image('pm.jpg', array('width'=>'100', 'height'=>'38')); ?>
                 </td>
                 <td align="center">
-                    <input type="text" name="PAYMENT_AMOUNT" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
+                    <input type="number" name="PAYMENT_AMOUNT" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0">
                 </td>
                 <td align="center">
                     <input type="submit" name="PAYMENT_METHOD" style="width:210px;" value="PERFECT MONEY ADD FUNDS">
                 </td>
             </form>
         </tr>
-
         <tr>
-            <form action="" method="post">
-                <input type="hidden" name="depositneteller" value="depositneteller">
+            <!-- <form action="" method="post"> -->
                 <td  align="center">
                 	<?php echo $this->Html->image('neteller.jpg', array('width'=>'100', 'height'=>'38')); ?>
                 </td>
                 <td align="center">
-                    <input type="text" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
+                    <input type="number" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0">
                 </td>
                 <td align="center">
-                    <input type="submit" name="Submit" style="width:210px;" value="NETELLER ADD FUNDS">
+                    <button class="submit-button" style="width:206px;" data-toggle="modal" data-target="#myModal">
+                      NETELLER ADD FUNDS
+                    </button>
                 </td>
-            </form>
+            <!-- </form> -->
         </tr>
-
         <tr>
             <form action="" method="post">
                 <td align="center">
                 	<?php echo $this->Html->image('balance.jpg', array('width'=>'100', 'height'=>'38')); ?>
                 </td>
                 <td align="center">
-                    <input type="text" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
+                    <input type="number" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0">
                 </td>
                 <td align="center">
                     <input type="submit" name="Submit" style="width:210px;" value="DEPOSIT VIA ACCOUNT BALANCE">
@@ -182,7 +246,7 @@
                     <?php echo $this->Html->image('okpay.png', array('width'=>'100', 'height'=>'38')); ?>
                 </td>
                 <td align="center">
-                    <input type="text" name="amount_okpay" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="">
+                    <input type="number" name="amount_okpay" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0">
                 </td>
                 <td align="center">
                     <input type="submit" name="Submit" style="width:210px;" value="OKPAY Payment">
@@ -210,69 +274,62 @@ Depósitos via <strong>EgoPay</strong> e <strong>PerfectMoney</strong> serão pr
 </div>	
 
 <br>
-
-<center>
-<center><h2>News</h2></center>
-<p><b>January 14, 2014 23:42</b><br>
-En -Daily Profit for today is 3.2%.<br>
-Pt - Divisão do lucro de hoje é de 3.2%<br>
-</p><p><b>January 13, 2014 02:55pm</b><br>
-En -Daily Profit for today is 3.5%.<br>
-Reports last week in forex are already available in http://dollarsflowsystem.com/investments.php
-Pt - Divisão do lucro de hoje é de 3.5%<br>
-Relatorios da ultima semana no forex ja estao disponiveis em http://dollarsflowsystem.com/investments.php
-</p><p><b>January 12, 2014 06:39pm</b><br>
-En -Daily Profit for today is 2%.<br>
-Pt - Divisão do lucro de hoje é de 2%<br>
-</p><p><b>January 11, 2014 07:44pm</b><br>
-En -Daily Profit for today is 2%.<br>
-Pt - Divisão do lucro de hoje é de 2%<br>
-</p><p><b>January 11, 2014 01:07pm</b><br>
-En -Withdrawals via SolidTrustPay are already released again.<br>
-For other processors will start now.<br>
-Pt - Saques via SolidTrustPay ja estao liberados novamente.<br>
-Para os outros processadores iremos iniciar agora.<br>
-</p><p><b>January 10, 2014 11:32pm</b><br>
-En -Daily Profit for today is 4.1%.<br>
-We're doing maintenance on our SolidTrustPay account. Please wait for the next 24 hours we will be working again.<br>
-Pt - Divisão do lucro de hoje é de 4.1%<br>
-Estamos em manuten��o em nossa conta SolidTrustPay. Por favor aguarde que nas pr�ximas 24 horas estaremos trabalhando novamente.<br>
-</p><p><b>January 09, 2014 09:18pm</b><br>
-En -Daily Profit for today is 3.3%.<br>
-Pt - Divisão do lucro de hoje é de 3.3%<br>
-</p><p><b>January 08, 2014 08:55pm</b><br>
-En -Daily Profit for today is 3.2%.<br>
-Pt - Divisão do lucro de hoje é de 3.2%<br>
-</p><p><b>January 07, 2014 11:27pm</b><br>
-En -Daily Profit for today is 3.4%.<br>
-Pt - Divisão do lucro de hoje é de 3.4%<br>
-</p><p><b>January 06, 2014 11:47pm</b><br>
-En -Daily Profit for today is 3.6%.<br>
-Pt - Divisão do lucro de hoje é de 3.6%<br>
-</p><p><b>January 05, 2014 11:51pm</b><br>
-En -Daily Profit for today is 2.1%.<br>
-Pt - Divisão do lucro de hoje é de 2.1%<br>
-</p><p><b>January 04, 2014 05:55pm</b><br>
-En -Daily Profit for today is 2%.<br>
-We are closing our fiscal year.<br>
-Payments on Saturday and Sunday will be paid Sunday until the end of the day.<br>
-Pt - Divisão do lucro de hoje é de 2%<br>
-Estamos fechando nosso ano fiscal.<br>
-Os pagamentos de sabado e domingo serao pagos domingo ate o final do dia.<br>
-</p><p><b>January 03, 2014 10:36pm</b><br>
-En -Daily Profit for today is 3.5%.<br>
-Pt - Divisão do lucro de hoje é de 3.5%<br>
-</p><p><b>January 02, 2014 10:47pm</b><br>
-En -Daily Profit for today is 3.2%.<br>
-Pt - Divisão do lucro de hoje é de 3.2%<br>
 <br><br>
-</p></center>
 
-<br><br>
 </div></td>
 </tr>
 </tbody></table>
 </shadow>
 </center>
 </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div align="center" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="margin-left: -300px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">To make investment via Neteller you have to pay manually to Forexpam.com Neteller account.
+                </h4>
+                Our Neteller Account Number Is: 453323176365
+            </div>
+            <div class="modal-body">
+
+            <?php echo $this->Form->create(); ?>
+                <table border="0px;">
+                    <tr>
+                        <td colspan="2">Required Information:</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Your Neteller account number</strong></td>
+                        <td>
+                            <?php echo $this->Form->input('account_number', array('div'=>false, 'label'=>false)); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Transaction ID</td>
+                        <td>
+                            <?php echo $this->Form->input('transaction_id', array('type'=>'text', 'div'=>false, 'label'=>false)); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Amount</td>
+                        <td>
+                            <?php echo $this->Form->input('transaction_id', array('type'=>'text', 'div'=>false, 'label'=>false)); ?>
+                        </td>
+                    </tr>
+                </table>
+            <?php echo $this->Form->end(); ?>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
 </div>

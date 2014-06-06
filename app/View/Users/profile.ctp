@@ -5,16 +5,16 @@
         <font face="verdana" size="2">
             <strong>Your sponsor is:</strong> <?php echo !empty($this->request->data['User']['sponsor']) ? $this->request->data['User']['sponsor'] : 'none'; ?>
         </font>
-        <br><br><br>        
-        <?php echo $this->Form->create('User'); ?>      
-        	<?php echo $this->Form->input('id', array('type'=>'hidden')); ?>        	
+        <br><br><br>
+        <?php echo $this->Form->create('User'); ?>
+        	<?php echo $this->Form->input('id', array('type'=>'hidden')); ?>
         	<table width="400" border="0" cellpadding="2" cellspacing="2">
                 <tbody>
                     <tr>
                         <td width="200">
                             <font size="2" face="verdana"><sombra>Username:</sombra></font>
                         </td>
-                        <td width="200">                            
+                        <td width="200">
                             <?php echo $this->Form->input('username', array('type'=>'text', 'readonly'=>true, 'style'=>'color:grey', 'label'=>false, 'div'=>false, 'size'=>'35')) ?>
                         </td>
                     </tr>
@@ -83,14 +83,27 @@
                                 echo $this->Form->input('neteller', array('type'=>'text', 'label'=>false, 'div'=>false, 'size'=>'35')); 
                             ?>
                         </td>
-                    </tr>                	
                     </tr>
+                    <tr>
+                        <td>
+                            <font size="2" face="verdana"><sombra>Okpay:</sombra></font>
+                        </td>
+                        <td>
+                            <?php
+                                if(empty($this->request->data['User']['okpay'])){
+                                    $this->request->data['User']['okpay'] = 'none';
+                                }
+                                echo $this->Form->input('okpay', array('type'=>'text', 'label'=>false, 'div'=>false, 'size'=>'35')); 
+                            ?>
+                        </td>
+                    </tr>
+
                     <tr>
                         <td>
                             <font size="2" face="verdana"><sombra>New Password:</sombra></font>
                         </td>
                         <td>
-                            <?php echo $this->Form->input('newpassword', array('type'=>'text', 'label'=>false, 'div'=>false, 'size'=>'35')); ?>                            
+                            <?php echo $this->Form->input('newpassword', array('type'=>'password', 'label'=>false, 'div'=>false, 'size'=>'35')); ?>
                         </td>
                     </tr>
                     <tr>
@@ -104,3 +117,4 @@
     </div>
 <br><br><br><br><br><br><br><br><br><br>
 </div>
+
