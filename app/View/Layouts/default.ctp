@@ -23,6 +23,9 @@ $cakeDescription = 'Forexpam.com';
 <html>
 <head>
 	<meta name="okpay-verification" content="6270a581-1ed2-41cf-8726-b5604c96d8e3" />
+	<meta content="INDEX,FOLLOW" name="robots" />
+	<meta name="description" content="forexpam.com">
+	<meta name="keywords" content="Free forex,investor,small business investor,business credit,small business idea,business,online business degree">
 	<?php echo $this->Html->charset(); ?>
 	<title>
 		<?php echo $cakeDescription ?>:

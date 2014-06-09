@@ -15,7 +15,7 @@
 <div>
     <font size="2" face="verdana">
         <h4><strong>Daily Profit - Results of the last 10 days</strong></h4>
-        <table width="95%"  style="background-color: #EFF5FB">
+        <table width="95%"  style="background-color: #EFF5FB" class="table">
             <tr style="font-size: 2; font-style: verdana">
                 <td width="11%" align="center">
                     <strong>3.0%</strong> <br>
@@ -62,7 +62,7 @@
     </font>
 </div>
 <br/>
-<table width="960" border="0" align="center">
+<table class="table table-striped table-hover">
   <tbody><tr>
     <td width="474" valign="top"><div align="center">
 	  <h2>Account Details</h2>
@@ -146,7 +146,7 @@
 
 <h2>Payment System </h2>
 
-<table width="450" border="0" align="center">
+<table class="table table-striped table-hover">
     <tbody>
         <tr>
            <td width="150"><div align="center"><strong>Processor</strong></div></td>
@@ -299,13 +299,13 @@ Depósitos via <strong>EgoPay</strong> e <strong>PerfectMoney</strong> serão pr
             </div>
             <div class="modal-body">
 
-            <?php echo $this->Form->create(); ?>
-                <table border="0px;">
+            <?php echo $this->Form->create('Neteller', array('class'=>'form-horizontal')); ?>
+                <table class="table table-striped table-hover">
                     <tr>
-                        <td colspan="2">Required Information:</td>
+                        <td colspan="2"><strong>Required Information:</strong></td>
                     </tr>
                     <tr>
-                        <td><strong>Your Neteller account number</strong></td>
+                        <td>Your Neteller account number</td>
                         <td>
                             <?php echo $this->Form->input('account_number', array('div'=>false, 'label'=>false)); ?>
                         </td>
