@@ -154,25 +154,25 @@
            <td width="150"><div align="center"><strong>Deposit</strong></div></td>
         </tr>
         <tr>
-            <form action="" method="post">
+            <form action="" method="post" id="frmSolidTrust">
                 <td align="center">
         		  <?php echo $this->Html->image('stp.jpg', array('width'=>'100', 'height'=>'38')); ?>
                 </td>
                 <td align="center">
-                    <input type="number" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0">
+                    <input type="number" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0" required="required">
     	        </td>
                 <td align="center">
-                    <input type="submit" name="Submit" style="width:210px;" value="SOLIDTRUSTPAY ADD FUNDS">
+                    <input type="submit" name="Submit" style="width:210px;" data-toggle="modal" data-target="#myModalSolidtrust" value="SOLIDTRUSTPAY ADD FUNDS">
     	        </td>
             </form>
         </tr>
         <tr>
-            <form action="https://www.egopay.com/payments/pay/express/?hash=T7BF6ZY82ZYPV9X8UIIDABWYMU9UGEH5_TW7iaUasVZf-y3K2gW7ngPA5acPgpsOD2wBBHoQMbCXUSE1Xlj4hcJ7zqwMf7izj4ivnRZkf7shJSwOkKhWwguGuy92DMUvlf3uDBlv9Bl0sMlaWuwa4HH991OGrMeoTjrV_vSzntry2E91UeiuKHkL5XndHLwrNoFl6q__m6vTNR4fTYHYGgzjStiKOPRRWXeGVbFy_KpCKqhufi0fhA16_4yDBRBtbd7HbqOcffZC7_E1bAATpFeYNumul59zFhK8Rt444F0W6V5NYf1u11JM_c_I6kdVQEbl-3Kw6XwK227BuqrPrnLhQYqHNr3hLZLK5cqJk1KItVGCPmqvOA" method="post" target="_blank">
+            <form action="https://www.egopay.com/payments/pay/express/?hash=T7BF6ZY82ZYPV9X8UIIDABWYMU9UGEH5_TW7iaUasVZf-y3K2gW7ngPA5acPgpsOD2wBBHoQMbCXUSE1Xlj4hcJ7zqwMf7izj4ivnRZkf7shJSwOkKhWwguGuy92DMUvlf3uDBlv9Bl0sMlaWuwa4HH991OGrMeoTjrV_vSzntry2E91UeiuKHkL5XndHLwrNoFl6q__m6vTNR4fTYHYGgzjStiKOPRRWXeGVbFy_KpCKqhufi0fhA16_4yDBRBtbd7HbqOcffZC7_E1bAATpFeYNumul59zFhK8Rt444F0W6V5NYf1u11JM_c_I6kdVQEbl-3Kw6XwK227BuqrPrnLhQYqHNr3hLZLK5cqJk1KItVGCPmqvOA" method="post" target="_blank" id="frmEgopay">
                 <td align="center">
                     <?php echo $this->Html->image('egopay_new.jpg', array('width'=>'100', 'height'=>'38')); ?>
                 </td>
                 <td align="center">
-                    <input type="number" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="100" min="0">
+                    <input type="number" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="100" min="0" required="required">
     	        </td>
                 <td  align="center">
                     <input type="submit" name="Submit" style="width:210px;" value="EGOPAY ADD FUNDS">
@@ -181,7 +181,7 @@
         </tr>
 
         <tr>
-            <form action="https://perfectmoney.is/api/step1.asp" method="post" target="blank">
+            <form action="https://perfectmoney.is/api/step1.asp" method="post" target="blank" id="frmPerfectMoney">
                 <input type="hidden" name="PAYEE_ACCOUNT" value="U1735086">
                 <input type="hidden" name="PAYEE_NAME" value="Forexpam Inc">
                 <input type="hidden" name="PAYMENT_ID" value="Forex system invest ">
@@ -199,7 +199,7 @@
                 	<?php echo $this->Html->image('pm.jpg', array('width'=>'100', 'height'=>'38')); ?>
                 </td>
                 <td align="center">
-                    <input type="number" name="PAYMENT_AMOUNT" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0">
+                    <input type="number" name="PAYMENT_AMOUNT" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0" required="required">
                 </td>
                 <td align="center">
                     <input type="submit" name="PAYMENT_METHOD" style="width:210px;" value="PERFECT MONEY ADD FUNDS">
@@ -207,7 +207,7 @@
             </form>
         </tr>
         <tr>
-            <!-- <form action="" method="post"> -->
+            <form method="post" id="frmMeteller">
                 <td  align="center">
                 	<?php echo $this->Html->image('neteller.jpg', array('width'=>'100', 'height'=>'38')); ?>
                 </td>
@@ -219,7 +219,7 @@
                       NETELLER ADD FUNDS
                     </button>
                 </td>
-            <!-- </form> -->
+            </form>
         </tr>
         <tr>
             <form action="" method="post">
@@ -227,7 +227,7 @@
                 	<?php echo $this->Html->image('balance.jpg', array('width'=>'100', 'height'=>'38')); ?>
                 </td>
                 <td align="center">
-                    <input type="number" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0">
+                    <input type="number" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0" required="required">
                 </td>
                 <td align="center">
                     <input type="submit" name="Submit" style="width:210px;" value="DEPOSIT VIA ACCOUNT BALANCE">
@@ -246,7 +246,7 @@
                     <?php echo $this->Html->image('okpay.png', array('width'=>'100', 'height'=>'38')); ?>
                 </td>
                 <td align="center">
-                    <input type="number" name="amount_okpay" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0">
+                    <input type="number" name="amount_okpay" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0" required="required">
                 </td>
                 <td align="center">
                     <input type="submit" name="Submit" style="width:210px;" value="OKPAY Payment">
@@ -287,7 +287,7 @@ Depósitos via <strong>EgoPay</strong> e <strong>PerfectMoney</strong> serão pr
 
 
 
-<!-- Modal -->
+<!-- Neteller -->
 <div align="center" class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" style="margin-left: -300px;">
         <div class="modal-content">
@@ -299,7 +299,7 @@ Depósitos via <strong>EgoPay</strong> e <strong>PerfectMoney</strong> serão pr
             </div>
             <div class="modal-body">
 
-            <?php echo $this->Form->create('Neteller', array('class'=>'form-horizontal')); ?>
+            <?php echo $this->Form->create('User', array('controller'=>'Users', 'action'=>'saveNeteller'), array('class'=>'form-horizontal')); ?>
                 <table class="table table-striped table-hover">
                     <tr>
                         <td colspan="2"><strong>Required Information:</strong></td>
@@ -307,29 +307,78 @@ Depósitos via <strong>EgoPay</strong> e <strong>PerfectMoney</strong> serão pr
                     <tr>
                         <td>Your Neteller account number</td>
                         <td>
-                            <?php echo $this->Form->input('account_number', array('div'=>false, 'label'=>false)); ?>
+                            <?php echo $this->Form->input('account_number', array('div'=>false, 'label'=>false, 'class'=>'span4', 'required'=>true)); ?>
                         </td>
                     </tr>
                     <tr>
                         <td>Transaction ID</td>
                         <td>
-                            <?php echo $this->Form->input('transaction_id', array('type'=>'text', 'div'=>false, 'label'=>false)); ?>
+                            <?php echo $this->Form->input('transaction_id', array('type'=>'text', 'div'=>false, 'label'=>false, 'required'=>true)); ?>
                         </td>
                     </tr>
                     <tr>
                         <td>Amount</td>
                         <td>
-                            <?php echo $this->Form->input('transaction_id', array('type'=>'text', 'div'=>false, 'label'=>false)); ?>
+                            <?php echo $this->Form->input('amount', array('type'=>'number', 'div'=>false, 'label'=>false, 'required'=>true)); ?>
                         </td>
                     </tr>
                 </table>
-            <?php echo $this->Form->end(); ?>
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <?php echo $this->Form->submit('Send details', array('div'=>false, 'label'=>false)) ?>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
             </div>
+            <?php echo $this->Form->end(); ?>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Solidtrust -->
+<div align="center" class="modal fade" id="myModalSolidtrust" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="margin-left: -300px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">To make investment via Solidtrustpay you have to pay manually to Forexpam.com Solidtrustpay account.
+                </h4>
+                Our Solidtrustpay Account Number Is: forexpam
+            </div>
+            <div class="modal-body">
+
+            <?php echo $this->Form->create('User', array('controller'=>'Users', 'action'=>'saveSolidtrust'), array('class'=>'form-horizontal')); ?>
+                <table class="table table-striped table-hover">
+                    <tr>
+                        <td colspan="2"><strong>Required Information:</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Your Solidtrustpay account number</td>
+                        <td>
+                            <?php echo $this->Form->input('account_number', array('div'=>false, 'label'=>false, 'class'=>'span4', 'required'=>true)); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Transaction ID</td>
+                        <td>
+                            <?php echo $this->Form->input('transaction_id', array('type'=>'text', 'div'=>false, 'label'=>false, 'required'=>true)); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Amount</td>
+                        <td>
+                            <?php echo $this->Form->input('amount', array('type'=>'number', 'div'=>false, 'label'=>false, 'required'=>true)); ?>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="modal-footer">
+                <?php echo $this->Form->submit('Send details', array('div'=>false, 'label'=>false)) ?>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+            <?php echo $this->Form->end(); ?>
         </div>
     </div>
 </div>

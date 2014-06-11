@@ -9,7 +9,7 @@ class ContactsController extends AppController {
 			if($this->Contact->customValidate()){
 				if($this->Contact->save($this->request->data)){
 					$this->_sendEmail($this->request->data);
-					$this->Session->setFlash('Send message successful');
+					$this->Session->setFlash('Send message successful', 'success');
 					$this->redirect(array('action'=>'index'));
 				}
 			}

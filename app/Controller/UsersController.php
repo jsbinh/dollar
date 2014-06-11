@@ -6,7 +6,7 @@ App::uses('CakeEmail', 'Network/Email');
 class UsersController extends AppController {
 
 	public function index(){
-
+        $this->redirect(array('action' => 'member'));
 	}
 
 	public function register() {
@@ -15,7 +15,7 @@ class UsersController extends AppController {
 				$this->User->create();
 				if($this->User->save($this->request->data)){
 					$this->_sendEmailRegister($this->request->data);
-					$this->Session->setFlash('Register successful!');
+					$this->Session->setFlash('Register successful!', 'success');
 					$this->redirect(array('register'));
 				}
 			}
@@ -25,7 +25,7 @@ class UsersController extends AppController {
 	public function _sendEmailRegister($data){
 		$send_to_email = Configure::read('send_to_email');
 		$Email = new CakeEmail('default');
-      	$subject = 'Forexpam.com - Your New Password';
+      	$subject = 'Forexpam.com - Your Account';
       	$content =
       		'Hello '. $data['User']['username'] .',
 
@@ -56,13 +56,13 @@ class UsersController extends AppController {
 
 			$users = $this->User->find('first', array(
 				'conditions' => array(
-					'User.username' => $data['User']['username'],
-					'User.password' => $data['User']['password']
+					'User.username' => trim($data['User']['username']),
+					'User.password' => trim($data['User']['password'])
 				),
 			));
 			if(!empty($users)){
 				$this->Session->write('user', $users);
-				$this->redirect(array('controller'=>'Users', 'action'=>'member'));
+				$this->redirect(array('controller'=>'Members', 'action'=>'index'));
 			}else{
 				$this->redirect(array('controller'=>'Home', 'action'=>'index'));
 			}
@@ -106,14 +106,6 @@ class UsersController extends AppController {
                 ->subject($subject)
                 ->send(nl2br($content));
         $Email->reset();
-	}
-
-	public function member(){
-		if(!$this->Session->read('user')){
-			$this->redirect(array('controller'=>'Users', 'action'=>'login'));
-		}
-		$this->set('user', $this->Session->read('user'));
-
 	}
 
 	public function profile(){
@@ -190,4 +182,46 @@ class UsersController extends AppController {
 		$this->Session->delete('user');
 		$this->redirect(array('controller'=>'Home', 'action'=>'index'));
 	}
+
+	public function saveNeteller(){
+		if($this->request->is('post') || $this->request->is('put')){
+			App::import('Model', 'Neteller');
+			$this->Neteller = new Neteller();
+
+			$user = $this->Session->read('user');
+			$result = array(
+                'user_id' => $user['User']['id'],
+				'account_number' => $this->request->data['User']['account_number'],
+				'transaction_id' => $this->request->data['User']['transaction_id'],
+				'amount' => $this->request->data['User']['amount'],
+                'date' => date('Y-m-d H:i:s')
+			);
+
+			if($this->Neteller->save($result)){
+                $this->Session->setFlash('Update Neteller payment successful!', 'success');
+                $this->redirect(array('controller'=>'Members', 'action' => 'index'));
+            }
+		}
+	}
+
+    public function saveSolidtrust(){
+        if($this->request->is('post') || $this->request->is('put')){
+            App::import('Model', 'Solidtrust');
+            $this->Solidtrust = new Solidtrust();
+
+            $user = $this->Session->read('user');
+            $result = array(
+                'user_id' => $user['User']['id'],
+                'account_number' => $this->request->data['User']['account_number'],
+                'transaction_id' => $this->request->data['User']['transaction_id'],
+                'amount' => $this->request->data['User']['amount'],
+                'date' => date('Y-m-d H:i:s')
+            );
+
+            if($this->Solidtrust->save($result)){
+                $this->Session->setFlash('Update Solidtrust payment successful!', 'success');
+                $this->redirect(array('controller'=>'Members', 'action' => 'index'));
+            }
+        }
+    }
 }

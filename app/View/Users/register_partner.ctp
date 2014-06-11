@@ -20,7 +20,7 @@
                         <font size="2" face="verdana"><sombra>Full Name:</sombra></font>
                     </td>
                     <td width="200">
-                        <?php echo $this->Form->input('fullname', array('size'=>'35', 'style'=>'color:grey', 'label'=>false, 'div'=>false)) ?>
+                        <?php echo $this->Form->input('fullname', array('size'=>'35', 'label'=>false, 'div'=>false)) ?>
                     </td>
                 </tr>
             	<tr>
@@ -36,7 +36,7 @@
                         <font size="2" face="verdana"><sombra>City:</sombra></font>
                     </td>
                     <td>
-                        <?php echo $this->Form->input('city', array('size'=>'35', 'readonly'=>false, 'style'=>'color:grey', 'label'=>false, 'div'=>false)) ?>
+                        <?php echo $this->Form->input('city', array('size'=>'35', 'readonly'=>false, 'label'=>false, 'div'=>false)) ?>
                     </td>
                 </tr>
                 <tr>
@@ -44,7 +44,7 @@
                         <sombra>Phone (optional):</sombra></font>
                     </td>
                     <td>
-                        <?php echo $this->Form->input('phone', array('size'=>'35', 'readonly'=>false, 'style'=>'color:grey', 'label'=>false, 'div'=>false)) ?>
+                        <?php echo $this->Form->input('phone', array('size'=>'35', 'readonly'=>false, 'label'=>false, 'div'=>false)) ?>
                     </td>
                 </tr>
                 <tr>
@@ -52,7 +52,7 @@
                         <font size="2" face="verdana"><sombra>Country:</sombra></font>
                     </td>
                     <td>
-                        <?php echo $this->Form->input('country', array('size'=>'35', 'readonly'=>false, 'style'=>'color:grey', 'label'=>false, 'div'=>false)) ?>
+                        <?php echo $this->Form->input('country', array('size'=>'35', 'readonly'=>false, 'label'=>false, 'div'=>false)) ?>
                     </td>
                 </tr>
                 <tr>
@@ -60,7 +60,7 @@
                         <font size="2" face="verdana"><sombra>Skype (optional):</sombra></font>
                     </td>
                     <td>
-                        <?php echo $this->Form->input('skype', array('size'=>'35', 'readonly'=>true, 'style'=>'color:grey', 'label'=>false, 'div'=>false)) ?>
+                        <?php echo $this->Form->input('skype', array('size'=>'35', 'readonly'=>true, 'label'=>false, 'div'=>false)) ?>
                     </td>
                 </tr>
                 <tr>
@@ -68,7 +68,7 @@
                         <font size="2" face="verdana"><sombra>Facebook (optional):</sombra></font>
                     </td>
                     <td>
-                        <?php echo $this->Form->input('facebook', array('size'=>'35', 'readonly'=>true, 'style'=>'color:grey', 'label'=>false, 'div'=>false)) ?>                        
+                        <?php echo $this->Form->input('facebook', array('size'=>'35', 'readonly'=>true, 'label'=>false, 'div'=>false)) ?>
                     </td>
                 </tr> 
                 <tr>

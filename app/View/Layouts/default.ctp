@@ -25,7 +25,7 @@ $cakeDescription = 'Forexpam.com';
 	<meta name="okpay-verification" content="6270a581-1ed2-41cf-8726-b5604c96d8e3" />
 	<meta content="INDEX,FOLLOW" name="robots" />
 	<meta name="description" content="forexpam.com">
-	<meta name="keywords" content="Free forex,investor,small business investor,business credit,small business idea,business,online business degree">
+	<meta name="keywords" content="Free forex,investor,small business investor,business credit,small business idea,business,online business degree, forexpam">
 	<?php echo $this->Html->charset(); ?>
 	<title>
 		<?php echo $cakeDescription ?>:
@@ -80,7 +80,7 @@ $cakeDescription = 'Forexpam.com';
 					}else{ ?>
 				          	<td align="center">
 			          			<?php
-			          				echo $this->Html->link('My account', array('controller' =>'Users', 'action'=>'member'), array('class' => 'myButtonlogado'));
+			          				echo $this->Html->link('My account', array('controller' =>'Members', 'action'=>'index'), array('class' => 'myButtonlogado'));
 				        			echo ' ';
 				        			echo $this->Html->link('Profile', array('controller' =>'Users', 'action'=>'profile'), array('class' => 'myButtonlogado'));
 				        			echo ' ';
@@ -88,9 +88,8 @@ $cakeDescription = 'Forexpam.com';
 				        			echo ' ';
 				        			echo $this->Html->link('Withdraw', array('controller' =>'Withdraws', 'action'=>'index'), array('class' => 'myButtonlogado'));
 				        			echo ' ';
-			          			?>
-								  <a href="" class="myButtonlogado">Referrals</a>
-								<?php
+				        			echo $this->Html->link('Referrals', array('controller' =>'Users', 'action'=>'referrals'), array('class' => 'myButtonlogado'));
+			          				echo ' ';
 									echo $this->Html->link('Investments', array('controller' =>'Investments', 'action'=>'admin_index'), array('class' => 'myButtonlogado'));
 				        			echo ' ';
 									echo $this->Html->link('Payments', array('controller' =>'Payments', 'action'=>'index'), array('class' => 'myButtonlogado'));

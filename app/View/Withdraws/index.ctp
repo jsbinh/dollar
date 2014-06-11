@@ -32,7 +32,7 @@
                     <?php echo $this->Form->input('SolidTrust.amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00')) ?>
                 </td>
             	<td align="center">
-                    <?php echo $this->Form->submit('INSTANT WITHDRAW', array('style'=>'height:40px;')); ?>
+                    <?php echo $this->Form->submit('MANUALLY WITHDRAW', array('style'=>'height:40px;')); ?>
                 </td>
             </tr>
             <!-- egopay -->
@@ -48,7 +48,7 @@
                     <?php echo $this->Form->input('Egopay.amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->submit('INSTANT WITHDRAW', array('style'=>'height:40px;')); ?>
+                    <?php echo $this->Form->submit('MANUALLY WITHDRAW', array('style'=>'height:40px;')); ?>
                 </td>
             </tr>
             <tr>
@@ -63,7 +63,7 @@
                     <?php echo $this->Form->input('PerfectMoney.amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->submit('INSTANT WITHDRAW', array('style'=>'height:40px;')); ?>
+                    <?php echo $this->Form->submit('MANUALLY WITHDRAW', array('style'=>'height:40px;')); ?>
                 </td>
             </tr>
             <tr>
@@ -78,7 +78,7 @@
                     <?php echo $this->Form->input('Neteller.amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->submit('INSTANT WITHDRAW', array('style'=>'height:40px;')); ?>
+                    <?php echo $this->Form->submit('MANUALLY WITHDRAW', array('style'=>'height:40px;')); ?>
                 </td>
             </tr>
             <tr>
@@ -93,7 +93,7 @@
                     <?php echo $this->Form->input('Okpay.amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->submit('INSTANT WITHDRAW', array('style'=>'height:40px;')); ?>
+                    <?php echo $this->Form->submit('MANUALLY WITHDRAW', array('style'=>'height:40px;')); ?>
                 </td>
             </tr>
         <?php echo $this->Form->end; ?>
