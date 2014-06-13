@@ -7,27 +7,26 @@ class User extends AppModel {
 	public $validate = array(
             'username' => array(
 				'notEmpty' => array(
-                    'rule' => array('notEmpty') 
+                    'rule' => array('notEmpty')
                 )
 			),
 			'password' => array(
 				'notEmpty' => array(
-                    'rule' => array('notEmpty') 
+                    'rule' => array('notEmpty')
                 )
 			),
 			'email' => array(
                 'notEmpty' => array(
-                    'rule' => array('notEmpty') 
+                    'rule' => array('notEmpty')
                 )
             ),
         );
-	
+
 	public function customValidate() {
-		
         $validate = array(
             'username' => array(
 				'required' => array(
-                    'rule' => 'notEmpty',                    
+                    'rule' => 'notEmpty',
                     'message' => __('Username is not empty!'),
                 ),
 				'unique' => array(
@@ -48,7 +47,7 @@ class User extends AppModel {
 			),
 			'email' => array(
                 'required' => array(
-                    'rule' => 'notEmpty',                    
+                    'rule' => 'notEmpty',
                     'message' => __('Email is not empty!'),
                 ),
                 'rule1' => array(
@@ -58,10 +57,12 @@ class User extends AppModel {
                 'rule2' => array(
                     'rule' => array('ischeckExistEmail'),
                     'message' => __('Email existed'),
+                    //'on' => 'create'
                 ),
                 'rule3' => array(
                     'rule' => array('isConfirmEmail'),
                     'message' => __('Confirm email is not equal!'),
+                    'on' => 'create'
                 ),
             ),
         );
@@ -73,7 +74,7 @@ class User extends AppModel {
      * check validate unique username
      * @author BinhHoang
      * */
-    public function isUniqueUsername(){    	
+    public function isUniqueUsername(){
     	if(!empty($this->data['User']['username'])){
     		$username = $this->data['User']['username'];
 
@@ -81,8 +82,8 @@ class User extends AppModel {
     			'conditions' => array(
     				'User.username' => $username,
     			)
-    		));    		
-    		if(empty($user)){    			
+    		));
+    		if(empty($user)){
     			return true;
     		}else{
     			return false;
@@ -97,7 +98,7 @@ class User extends AppModel {
      * */
     public function isConfirmPassword(){
     	if(empty($this->data['User']['confirm_password'])){
-    		return false;    		
+    		return false;
     	}
     	if(!empty($this->data['User']['confirm_password']) && !empty($this->data['User']['password'])){
     		if($this->data['User']['confirm_password'] == $this->data['User']['password']){
@@ -119,8 +120,8 @@ class User extends AppModel {
     			'conditions' => array(
     				'User.email' => $email,
     			)
-    		));    		
-    		if(empty($user)){    			
+    		));
+    		if(empty($user)){
     			return true;
     		}else{
     			return false;
@@ -133,9 +134,9 @@ class User extends AppModel {
      * check validate confirm email
      * @author BinhHoang
      * */
-    public function isConfirmEmail(){    	
+    public function isConfirmEmail(){
     	if(empty($this->data['User']['confirm_email'])){
-    		return false;    		
+    		return false;
     	}
     	if(!empty($this->data['User']['confirm_email']) && !empty($this->data['User']['email'])){
     		if(trim($this->data['User']['confirm_email']) == trim($this->data['User']['email'])){
@@ -144,5 +145,17 @@ class User extends AppModel {
     			return false;
     		}
     	}
+    }
+
+    public function getUserbyId($id){
+        $user = $this->find('first', array(
+            'conditions' => array(
+                'User.id' => $id
+            )
+        ));
+        if(!empty($user)){
+            return $user['User']['username'];
+        }
+        return '';
     }
 }

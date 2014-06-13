@@ -5,9 +5,91 @@ App::uses('CakeEmail', 'Network/Email');
 
 class UsersController extends AppController {
 
+    public $uses = array('User');
+
 	public function index(){
         $this->redirect(array('action' => 'member'));
 	}
+
+	public function admin_index(){
+		$this->layout = 'backend';
+
+        $this->paginate = array(
+            'delete_flg' => 0,
+            'limit' => 25,
+            'order' => array('User.id' => 'asc')
+        );
+        $this->set('users', $this->paginate());
+
+	}
+
+    public function admin_edit($id) {
+        $this->layout = 'backend';
+
+        if ($this->request->is('post') || $this->request->is('put')) {
+            $this->User->id = $id;
+            $this->User->set($this->request->data);
+
+            //if ($this->User->customValidate()) {
+                if ($this->User->save($this->request->data)) {
+                    $this->Session->setFlash(__('Update user successful'), 'success');
+                    $this->redirect(array('controller'=>'Users', 'action'=>'index'));
+                } else {
+                    echo 2;exit;
+                    $this->Session->setFlash(__('Update user error'), 'error');
+                }
+            //}
+        }
+
+        $this->request->data = $this->User->findById($id);
+
+
+        $this->render('detail');
+    }
+
+    public function admin_delete($id) {
+        $this->User->id = $id;
+        if (!$this->User->exists()) {
+            return $this->redirect(array('action' => 'index'));
+        }
+
+        if ($this->User->delete()) {
+            $this->Session->setFlash('Delete successful', 'success');
+            $this->redirect(array('controller'=>'Users', 'action'=>'index'));
+        }
+        $this->Session->setFlash('Delete error!', 'error');
+        $this->redirect(array('controller'=>'Users', 'action'=>'index'));
+    }
+
+	public function admin_login(){
+		$this->layout = false;
+        if ($this->request->is('post') || $this->request->is('put')) {
+            $data = $this->request->data;
+            pr($data);
+            $user = $this->User->find('first', array(
+                'conditions' => array(
+                    'User.username' => trim($data['User']['username']),
+                    'User.password' => trim($data['User']['password']),
+                )
+            ));
+            if(empty($user)){
+
+            }else{
+                $this->Session->write('user', $user);
+                $this->redirect(array('controller' => 'Index', 'action' => 'index'));
+            }
+        }
+	}
+
+	public function admin_logout(){
+        $this->Session->destroy();
+        $this->redirect('login');
+	}
+
+	public function admin_changepassword() {
+		$this->layout = 'backend';
+	}
+
 
 	public function register() {
 		if($this->request->is('POST') || $this->request->is('PUT')){
