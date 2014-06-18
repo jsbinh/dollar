@@ -44,6 +44,11 @@ class PercentsController extends AppController {
 
         if($this->request->is('post') || $this->request->is('put')){
             $data = $this->request->data;
+            if(strtotime($data['Percent']['date']) == strtotime(date('Y-m-d'))){
+                //update balance of user
+                $this->User->updateBalance($data['Percent']['date'], $data['Percent']['percent']);
+            }
+
             $this->Percent->create();
             if($this->Percent->save($data)){
                 $this->Session->setFlash('Add new percent successful', 'success');
@@ -75,28 +80,31 @@ class PercentsController extends AppController {
         $this->User = new User();
 		$this->layout = 'backend';
 
+        $balance = $this->Percent->findById($id);
+
         if($this->request->is('post') || $this->request->is('put')){
+            //delete old balance
+            $this->User->updateEditBalance($balance['Percent']['date'], $balance['Percent']['percent']);
+
             $data = $this->request->data;
             $this->Percent->id = $id;
             $this->Percent->set($data);
             if($this->Percent->save($data)){
+                //add new balance
+                $this->User->updateBalance($data['Percent']['date'], $data['Percent']['percent']);
+    
                 $this->Session->setFlash('Update percent successful', 'success');
                 $this->redirect(array('controller'=>'Percents', 'action'=>'index'));
             }
         }
-        $this->request->data = $this->Percent->findById($id);
+        $this->request->data = $balance;
         $users = $this->User->getAllUser();
         $this->set('users', $users);
 		$this->render('admin_detail');
 	}
 
     public function admin_delete($id) {
-        $this->Percent->id = $id;
-        if (!$this->Percent->exists()) {
-            return $this->redirect(array('action' => 'index'));
-        }
-
-        if ($this->Percent->updateAll(array('Percent.delete_flg' => 1), array('Percent.id' => $id))) {
+        if($this->Percent->updateAll(array('Percent.delete_flg' => 1), array('Percent.id' => $id))) {
             $this->Session->setFlash('Delete successful', 'success');
             $this->redirect(array('controller'=>'Percents', 'action'=>'index'));
         }else{

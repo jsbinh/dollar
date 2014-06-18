@@ -191,4 +191,72 @@ class User extends AppModel {
         }
     }
 
+    public function updateBalance($date, $percent){
+        if(strtotime($date) == strtotime(date('Y-m-d'))){
+            $users = $this->find('all', array(
+                'conditions' => array(
+                    'User.delete_flg' => 0
+                )
+            ));
+
+            if(!empty($users)){
+                foreach ($users as $key => $user) {
+                    if(!empty($user['User']['total_invested'])){
+                        $balance = $user['User']['total_invested'] * $percent/100;
+                        if(!empty($user['User']['balance'])){
+                            $balance = $user['User']['balance'] + $balance;
+                        }
+                        $this->updateAll(array('User.balance' => $balance), array('User.id'=>$user['User']['id']));
+                    }
+                }
+            }
+        }
+    }
+
+    public function updateEditBalance($date, $percent){
+        $users = $this->find('all', array(
+            'conditions' => array(
+                'User.delete_flg' => 0
+            )
+        ));
+
+        if(!empty($users)){
+            foreach ($users as $key => $user) {
+                if(!empty($user['User']['total_invested'])){
+                    $balance = $user['User']['total_invested'] * $percent/100;
+
+                    if(!empty($user['User']['balance'])){
+                        $balance = $user['User']['balance'] - $balance;
+                    }else{
+                        $balance = 0;
+                    }
+                    if($balance < 0){
+                        $balance = 0;
+                    }
+
+                    $this->updateAll(array('User.balance' => $balance), array('User.id'=>$user['User']['id']));
+                }
+            }
+        }
+    }
+
+    public function updateTotalPayment($user_id, $amount){
+        $user = $this->find('first', array(
+            'conditions' => array(
+                'User.delete_flg' => 0,
+                'User.id' => $user_id
+            )
+        ));
+
+        if(!empty($user)){
+            if(($amount <= $user['User']['balance'])&& (($user['User']['total_payments'] + $amount) <= $user['User']['active_investments'])){
+                $new_payment = $user['User']['total_payments'] + $amount;
+                if($this->updateAll(array('User.total_payments' => $new_payment), array('User.id'=>$user_id))){
+                    $balance = $user['User']['balance'] - $amount;
+                    $this->updateAll(array('User.balance' => $balance), array('User.id'=>$user_id));
+                }
+            }
+        }
+    }
+
 }

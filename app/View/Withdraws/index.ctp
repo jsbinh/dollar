@@ -10,7 +10,15 @@
 <br>
 <h2>WITHDRAW</h2>
 <br>
-<font size="8" face="verdana">$0.00</font>
+<font size="8" face="verdana">
+    <?php
+        if(!empty($user['User']['balance'])){
+            echo '$'.$user['User']['balance'];
+        }else{
+            echo '$0.00';
+        }
+    ?>
+</font>
 <br>
 <font size="2" face="verdana">Account Balance</font><br><font face="verdana" size="1" color="grey">Minimum Withdrawal: $1.00</font>
 <br><br>
@@ -29,7 +37,7 @@
                     <?php echo $this->Form->input('account', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none', 'required'=>true)) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00')) ?>
+                    <?php echo $this->Form->input('amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00', 'max'=>$user['User']['balance'])) ?>
                 </td>
             	<td align="center">
                     <?php echo $this->Form->submit('MANUALLY WITHDRAW', array('style'=>'height:40px;')); ?>
@@ -47,7 +55,7 @@
                     <?php echo $this->Form->input('account', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none', 'required'=>true)) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00', 'required'=>true)) ?>
+                    <?php echo $this->Form->input('amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00', 'required'=>true, 'max'=>$user['User']['balance'])) ?>
                 </td>
                 <td align="center">
                     <?php echo $this->Form->submit('MANUALLY WITHDRAW', array('style'=>'height:40px;')); ?>
@@ -65,7 +73,7 @@
                     <?php echo $this->Form->input('account', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none', 'required'=>true)) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00', 'required'=>true)) ?>
+                    <?php echo $this->Form->input('amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00', 'required'=>true, 'max'=>$user['User']['balance'])) ?>
                 </td>
                 <td align="center">
                     <?php echo $this->Form->submit('MANUALLY WITHDRAW', array('style'=>'height:40px;')); ?>
@@ -83,7 +91,7 @@
                     <?php echo $this->Form->input('account', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none', 'required'=>true)) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00', 'required'=>true)) ?>
+                    <?php echo $this->Form->input('amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00', 'required'=>true, 'max'=>$user['User']['balance'])) ?>
                 </td>
                 <td align="center">
                     <?php echo $this->Form->submit('MANUALLY WITHDRAW', array('style'=>'height:40px;')); ?>
@@ -101,7 +109,7 @@
                     <?php echo $this->Form->input('account', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none', 'required'=>true)) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00', 'required'=>true)) ?>
+                    <?php echo $this->Form->input('amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00', 'required'=>true, 'max'=>$user['User']['balance'])) ?>
                 </td>
                 <td align="center">
                     <?php echo $this->Form->submit('MANUALLY WITHDRAW', array('style'=>'height:40px;')); ?>

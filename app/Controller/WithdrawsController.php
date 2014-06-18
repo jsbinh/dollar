@@ -6,10 +6,17 @@ class WithdrawsController extends AppController {
 	public $uses = array('Withdraw', 'User');
 
 	public function index(){
-		$user = $this->Session->read('user');
 		if(!$this->Session->read('user')){
 			$this->redirect(array('controller'=>'Users', 'action'=>'login'));
 		}
+        $user_session = $this->Session->read('user');
+        $user = $this->User->find('first', array(
+            'conditions' => array(
+                'User.delete_flg' => 0,
+                'User.id' => $user_session['User']['id']
+            )
+        ));
+
 		if($this->request->is('put') || $this->request->is('post')){
 			$data = $this->request->data;
 
@@ -17,19 +24,21 @@ class WithdrawsController extends AppController {
 				if(!empty($value['account']) && !empty($value['amount'])){
 					$value['user_id'] = $user['User']['id'];
 					$value['withdraw_date'] = date('Y-m-d H:i:s', time());
+                    $this->User->updateTotalPayment($user['User']['id'], $value['amount']);
 
-
-                    $this->User->updateTotalInvested($user, $value['amount']);
-
-					// $this->Withdraw->create();
-					// if($this->Withdraw->save($value)){
-
-     //                }
-				}
+					$this->Withdraw->create();
+					if($this->Withdraw->save($value)){
+                        $this->Session->setFlash('Withdraw successful', 'success');
+                        $this->redirect(array('controller'=>'Withdraws', 'action'=>'index'));
+                    }
+				}else{
+                    $this->Session->setFlash('Balance must more than $0', 'error');
+                    $this->redirect(array('controller'=>'Withdraws', 'action'=>'index'));
+                }
 			}
-            $this->Session->setFlash('Withdraw successful', 'success');
-			$this->redirect(array('controller'=>'Withdraws', 'action'=>'index'));
 		}
+
+        $this->set('user', $user);
     }
 
     public function admin_index(){

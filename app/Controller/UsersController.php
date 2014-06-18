@@ -5,7 +5,7 @@ App::uses('CakeEmail', 'Network/Email');
 
 class UsersController extends AppController {
 
-    public $uses = array('User');
+    public $uses = array('User', 'Percent');
 
 	public function index(){
         $this->redirect(array('action' => 'member'));
@@ -70,6 +70,7 @@ class UsersController extends AppController {
                 'conditions' => array(
                     'User.username' => trim($data['User']['username']),
                     'User.password' => trim($data['User']['password']),
+                    'User.delete_flg' => 0
                 )
             ));
             if(empty($user)){
@@ -139,13 +140,15 @@ class UsersController extends AppController {
 			$users = $this->User->find('first', array(
 				'conditions' => array(
 					'User.username' => trim($data['User']['username']),
-					'User.password' => trim($data['User']['password'])
+					'User.password' => trim($data['User']['password']),
+                    'User.delete_flg' =>0
 				),
 			));
 			if(!empty($users)){
 				$this->Session->write('user', $users);
 				$this->redirect(array('controller'=>'Members', 'action'=>'index'));
 			}else{
+                $this->Session->setFlash('Username not existed or wrong password', 'error');
 				$this->redirect(array('controller'=>'Home', 'action'=>'index'));
 			}
 		}
@@ -157,7 +160,8 @@ class UsersController extends AppController {
 			$user = $this->User->find('first', array(
 				'conditions'=> array(
 					'User.username' => trim($data['User']['username']),
-					'User.email' => trim($data['User']['email'])
+					'User.email' => trim($data['User']['email']),
+                    'User.delete_flg' => 0
 				)
 			));
 
@@ -265,12 +269,8 @@ class UsersController extends AppController {
                 'date' => date('Y-m-d H:i:s')
 			);
 
-            $user = $this->User->findById($user_session['User']['id']);
-
-            $this->User->updateTotalInvested($user, $result['amount']);
-
 			if($this->Neteller->save($result)){
-                $this->Session->setFlash('Update Neteller payment successful!', 'success');
+                $this->Session->setFlash('Your request has been sent to the administrators!', 'success');
                 $this->redirect(array('controller'=>'Members', 'action' => 'index'));
             }
 		}
@@ -290,12 +290,8 @@ class UsersController extends AppController {
                 'date' => date('Y-m-d H:i:s')
             );
 
-            $user = $this->User->findById($user_session['User']['id']);
-
-            $this->User->updateTotalInvested($user, $result['amount']);
-
             if($this->Solidtrust->save($result)){
-                $this->Session->setFlash('Update Solidtrust payment successful!', 'success');
+                $this->Session->setFlash('Your request has been sent to the administrators!', 'success');
                 $this->redirect(array('controller'=>'Members', 'action' => 'index'));
             }
         }

@@ -12,9 +12,9 @@
 <br>
 <h2>Referrals</h2>
 
-<font color="grey" size="2" face="verdana"><strong>Your referral link:</strong> http://forexpam.com/?ref=trocvuong
+<!-- <font color="grey" size="2" face="verdana"><strong>Your referral link:</strong> http://forexpam.com/?ref=trocvuong -->
 <br>
-Total referrals: <strong>0</strong> Total commissions received: <strong>$0.00</strong></font>
+<!-- Total referrals: <strong>0</strong> Total commissions received: <strong>$0.00</strong></font> -->
 <br><br><br><br><br><br>
 You have no Referrals.
 

@@ -9,7 +9,7 @@
 <div class="row-fluid sortable">
     <div class="box span12">
         <div class="box-header well" data-original-title>
-            <h2><i class="icon-calendar"></i> List Egopays</h2>
+            <h2><i class="icon-calendar"></i> List Withdraw</h2>
         </div>
         <?php echo $this->Session->flash(); ?>
         <div class="action">

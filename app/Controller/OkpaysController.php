@@ -39,15 +39,44 @@ class OkpaysController extends AppController {
             $this->request->data['Okpay']['user_id'] = $user_session['User']['id'];
             $this->request->data['Okpay']['date'] = date('Y-m-d H:i:s');
 
-            $user = $this->User->findById($user_session['User']['id']);
-            //update total_invested
-            $this->User->updateTotalInvested($user, $this->request->data['Okpay']['amount']);
-
             $this->Okpay->create();
             if($this->Okpay->save($this->request->data)){
-                $this->Session->setFlash('Payment Okpay successful', 'success');
+                $this->Session->setFlash('Your request has been sent to administrators', 'success');
                 $this->redirect(array('controller'=>'Members', 'action'=>'index'));
             }
+        }
+    }
+
+
+    public function admin_approved($id, $user_id) {
+
+        $this->layout = 'backend';
+        $flg = false;
+        if($user = $this->Session->read('user')){
+            $user = $this->Session->read('user');
+            if($user['User']['username'] == 'admin' || $user['User']['username'] == 'Admin'){
+                $flg = true;
+            }
+        }
+        if(!$this->Session->read('user') || !$flg){
+            $this->redirect(array('controller' => 'users', 'action' => 'logout'));
+        }
+
+        $user = $this->User->findById($user_id);
+        $okpay = $this->Okpay->find('first', array(
+            'conditions' => array(
+                'Okpay.id' => $id
+            )
+        ));
+
+        if(!empty($okpay)){
+            if($this->Okpay->updateAll(array('Okpay.approved' => 1), array('Okpay.id'=>$id))){
+                $this->User->updateTotalInvested($user, $okpay['Okpay']['amount']);
+                $this->Session->setFlash('Approved Okpay!', 'success');
+                $this->redirect(array('controller'=>'Okpays', 'action' => 'index'));
+            }
+        }else{
+            $this->redirect(array('controller'=>'Okpays', 'action' => 'index'));
         }
     }
 

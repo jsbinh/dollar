@@ -46,7 +46,7 @@ $cakeDescription = 'Forexpam.com';
 </head>
 <body>
 	<div id="header">
-		<table width="960" border="0" height="52" align="center" cellpadding="0" cellspacing="0">
+		<table width="960" border="0" align="center" cellpadding="0" cellspacing="0">
 		    <tbody>
 		        <tr>
 		        	<?php if(!$this->Session->read('user')){ ?>
@@ -110,10 +110,12 @@ $cakeDescription = 'Forexpam.com';
 		      </tbody>
 	    </table>
 	</div>
-	<div id="content">
-		<?php echo $this->Session->flash(); ?>
+	<div id="main" class="column">
+		<div id="content">
+			<?php echo $this->Session->flash(); ?>
 
-		<?php echo $this->fetch('content'); ?>
+			<?php echo $this->fetch('content'); ?>
+		</div>
 	</div>
 		<div id="footer">
 			<div id="footnote">

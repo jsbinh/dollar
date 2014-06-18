@@ -24,7 +24,7 @@
                 <th>Account number</th>
                 <th>Transaction ID</th>
                 <th>Amount</th>
-               <!--  <th width="15%">Action</th> -->
+                <th width="10%">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -50,16 +50,15 @@
                         <td class="center">
                             <?php echo $data['Neteller']['amount']; ?>
                         </td>
-                        <!-- <td class="center">
+                        <td class="center">
                             <?php
-                            // echo $this->Html->link('<i class="icon-zoom-in icon-white"></i>
-                            //                              Edit
-                            //                             </span> ', array('controller' => 'Percents',
-                            //     'action' => 'edit', $data['Neteller']['id']), array('escape' => false, 'class' => 'btn btn-success'));
-                            // echo ' ';
-                            // echo $this->Form->postLink('<i class="icon-trash icon-white"></i>Delete</span>',array('controller' => 'Percents', 'action' => 'delete', $data['Neteller']['id']), array('escape' => false, 'class' => 'btn btn-danger'), __('Do you want delete this row?', h($data['Neteller']['id'])));
+                                if(empty($data['Neteller']['approved'])){
+                                    echo $this->Form->postLink('<i class="icon-check icon-white"></i>Approve</span>',array('controller' => 'Netellers', 'action' => 'approved', $data['Neteller']['id'], $data['Neteller']['user_id']), array('escape' => false, 'class' => 'btn btn-warning'), __('Do you want approved %s?', h($data['Neteller']['date'])));
+                                }else{
+                                    echo '<p style="background-color:green; color:white">Approved</p>';
+                                }
                             ?>
-                        </td> -->
+                        </td>
                     </tr>
                     <?php
                 }

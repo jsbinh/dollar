@@ -22,7 +22,7 @@
                 <th>Username</th>
                 <th>Date</th>
                 <th>Amount</th>
-               <!--  <th width="15%">Action</th> -->
+                <th width="10%">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -42,16 +42,15 @@
                         <td class="center">
                             <?php echo $data['Perfectmoney']['amount']; ?>
                         </td>
-                        <!-- <td class="center">
+                        <td class="center">
                             <?php
-                            // echo $this->Html->link('<i class="icon-zoom-in icon-white"></i>
-                            //                              Edit
-                            //                             </span> ', array('controller' => 'Percents',
-                            //     'action' => 'edit', $data['Neteller']['id']), array('escape' => false, 'class' => 'btn btn-success'));
-                            // echo ' ';
-                            // echo $this->Form->postLink('<i class="icon-trash icon-white"></i>Delete</span>',array('controller' => 'Percents', 'action' => 'delete', $data['Neteller']['id']), array('escape' => false, 'class' => 'btn btn-danger'), __('Do you want delete this row?', h($data['Neteller']['id'])));
+                                if(empty($data['Perfectmoney']['approved'])){
+                                    echo $this->Form->postLink('<i class="icon-check icon-white"></i>Approve</span>',array('controller' => 'Perfectmoneys', 'action' => 'approved', $data['Perfectmoney']['id'], $data['Perfectmoney']['user_id']), array('escape' => false, 'class' => 'btn btn-warning'), __('Do you want approved %s?', h($data['Perfectmoney']['date'])));
+                                }else{
+                                    echo '<p style="background-color:green; color:white">Approved</p>';
+                                }
                             ?>
-                        </td> -->
+                        </td>
                     </tr>
                     <?php
                 }

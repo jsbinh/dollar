@@ -234,20 +234,6 @@
             </form>
         </tr>
         <tr>
-            <form action="" method="post" id="frmBalance">
-                <td align="center">
-                	<?php echo $this->Html->image('balance.jpg', array('width'=>'100', 'height'=>'38')); ?>
-                </td>
-                <td align="center">
-                    <input type="number" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0" required="required" id="BalanceNumber" readonly="readonly">
-                </td>
-                <td align="center">
-                    <input type="submit" id="submitBalance" name="Submit" style="width:210px;" value="DEPOSIT VIA ACCOUNT BALANCE">
-                </td>
-            </form>
-        </tr>
-
-        <tr>
             <form action="https://www.okpay.com/process.html" method="post" target="_blank" id="frmOkpay">
                 <input type="hidden" name="ok_receiver" value="OK676429149"/>
                 <input type="hidden" name="ok_item_1_name" value="Forexpam"/>
@@ -412,14 +398,6 @@ Depósitos via <strong>EgoPay</strong> e <strong>PerfectMoney</strong> serão pr
     echo $this->Form->end();
 ?>
 
-<!-- Balance -->
-<?php
-    // echo $this->Form->create('Balance', array('id'=>'Balance_form_hide' , 'style'=>'display: none', 'url' =>array('controller'=>'Balances', 'action'=>'add')));
-    // echo $this->Form->input('amount', array('id'=>'BalanceNumberHide'));
-    // echo $this->Form->submit('Submit', array('id'=>'BalanceSubmit_Hide'));
-    // echo $this->Form->end();
-?>
-
 <!-- Okpay -->
 <?php
     echo $this->Form->create('Okpay', array('id'=>'Okpay_form_hide' , 'style'=>'display: none', 'url' =>array('controller'=>'Okpays', 'action'=>'add')));
@@ -458,18 +436,6 @@ Depósitos via <strong>EgoPay</strong> e <strong>PerfectMoney</strong> serão pr
         $('#submitBalance').click(function(){
             alert('This payment is not deposit');
         });
-
-        //Balance
-        //  $('#BalanceNumber').change(function(){
-        //     var balance = $('#BalanceNumber').val();
-        //     $('#BalanceNumberHide').val(balance);
-        // }).trigger('change');
-
-        // $('#frmBalance').submit(function(){
-        //     setTimeout(function(){
-        //         $('#Balance_form_hide').submit();
-        //     }, 100);
-        // });
 
         //Okpay
          $('#OkpayNumber').change(function(){

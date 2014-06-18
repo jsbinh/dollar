@@ -40,12 +40,9 @@
                         </td>
                         <td class="center">
                             <?php
-                            echo $this->Html->link('<i class="icon-zoom-in icon-white"></i>
-                                                         Edit
-                                                        </span> ', array('controller' => 'Percents',
-                                'action' => 'edit', $data['Percent']['id']), array('escape' => false, 'class' => 'btn btn-success'));
+                            echo $this->Html->link('<i class="icon-zoom-in icon-white"></i>Edit</span> ', array('controller' => 'Percents','action' => 'edit', $data['Percent']['id']), array('escape' => false, 'class' => 'btn btn-success'));
                             echo ' ';
-                            echo $this->Form->postLink('<i class="icon-trash icon-white"></i>Delete</span>',array('controller' => 'Percents', 'action' => 'delete', $data['Percent']['id']), array('escape' => false, 'class' => 'btn btn-danger'), __('Do you want delete this row?', h($data['Percent']['id'])));
+                            echo $this->Form->postLink('<i class="icon-trash icon-white"></i>Delete</span>',array('controller' => 'Percents', 'action' => 'delete', $data['Percent']['id']), array('escape' => false, 'class' => 'btn btn-danger'), __('Do you want delete this row %s?', h($data['Percent']['id'])));
                             ?>
                         </td>
                     </tr>

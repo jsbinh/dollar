@@ -79,7 +79,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <?php echo $this->Html->link('Change password', array('controller' => 'users', 'action' => 'changepassword')); ?>
+                                <?php //echo $this->Html->link('Change password', array('controller' => 'users', 'action' => 'changepassword')); ?>
                             </li>
                             <li class="divider"></li>
                             <li>
@@ -146,7 +146,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                             </li>
                             <li>
                                 <?php
-                                echo $this->Html->link('<i class="icon-folder-open"></i><span class="hidden-tablet"> Balance manager</span>', array('controller' => 'Balances', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'candidates'));
+                                //echo $this->Html->link('<i class="icon-folder-open"></i><span class="hidden-tablet"> Balance manager</span>', array('controller' => 'Balances', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'candidates'));
                                 ?>
                             </li>
                             <li>
