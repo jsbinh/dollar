@@ -158,4 +158,37 @@ class User extends AppModel {
         }
         return '';
     }
+
+    public function getAllUser(){
+        $users = $this->find('list', array(
+            'conditions' => array(
+                'delete_flg' =>0
+            ),
+            'fields' => array('id', 'username')
+        ));
+        return $users;
+    }
+
+    public function updateTotalInvested($user, $amount){
+        if(!empty($user) && !empty($amount)){
+            $root_amount = $user['User']['total_invested'];
+
+            if(empty($root_amount)){
+                $root_amount = $amount;
+            }else{
+                $root_amount = $root_amount + $amount;
+            }
+            if($this->updateAll(array('User.total_invested' => $root_amount), array('User.id'=>$user['User']['id']))){
+                $active_invesment = $user['User']['active_investments'];
+
+                if(empty($active_invesment)){
+                    $active_invesment = $amount*2;
+                }else{
+                    $active_invesment = $active_invesment + $amount*2;
+                }
+                $this->updateAll(array('User.active_investments' => $active_invesment), array('User.id'=>$user['User']['id']));
+            }
+        }
+    }
+
 }

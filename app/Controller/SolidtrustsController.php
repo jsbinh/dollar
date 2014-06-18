@@ -1,5 +1,5 @@
 <?php
-class NetellersController extends AppController {
+class SolidtrustsController extends AppController {
 
 
 	public function admin_index(){
@@ -20,8 +20,8 @@ class NetellersController extends AppController {
             // 'conditions' => array(
             //     'delete_flg' => 0,
             // ),
-            'order' => array('Neteller.date' => 'desc')
+            'order' => array('Solidtrust.date' => 'desc')
         );
-        $this->set('netellers', $this->paginate());
+        $this->set('solidtrusts', $this->paginate());
 	}
 }

@@ -9,7 +9,7 @@
 <div class="row-fluid sortable">
     <div class="box span12">
         <div class="box-header well" data-original-title>
-            <h2><i class="icon-calendar"></i> List Neteller</h2>
+            <h2><i class="icon-calendar"></i> List Balances</h2>
         </div>
         <?php echo $this->Session->flash(); ?>
         <div class="action">
@@ -21,8 +21,6 @@
             <tr>
                 <th>Username</th>
                 <th>Date</th>
-                <th>Account number</th>
-                <th>Transaction ID</th>
                 <th>Amount</th>
                <!--  <th width="15%">Action</th> -->
             </tr>
@@ -31,24 +29,18 @@
             <?php
             App::import('Model', 'User');
             $this->User = new User();
-            if (!empty($netellers)) {
-                foreach ($netellers as $data) {
+            if (!empty($balances)) {
+                foreach ($balances as $data) {
                     ?>
                     <tr>
                         <td>
-                            <?php echo h($this->User->getUserbyId($data['Neteller']['user_id'])); ?>
+                            <?php echo h($this->User->getUserbyId($data['Balance']['user_id'])); ?>
                         </td>
                         <td class="center">
-                            <?php echo h($data['Neteller']['date']) ?>
+                            <?php echo h($data['Balance']['date']) ?>
                         </td>
                         <td class="center">
-                            <?php echo $data['Neteller']['account_number']; ?>
-                        </td>
-                        <td class="center">
-                            <?php echo $data['Neteller']['transaction_id']; ?>
-                        </td>
-                        <td class="center">
-                            <?php echo $data['Neteller']['amount']; ?>
+                            <?php echo $data['Balance']['amount']; ?>
                         </td>
                         <!-- <td class="center">
                             <?php

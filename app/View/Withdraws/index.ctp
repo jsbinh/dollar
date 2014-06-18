@@ -19,84 +19,95 @@
 
 <table width="548" border="0" align="center">
     <tbody>
-        <?php echo $this->Form->create('Withdraw');?>
+        <?php echo $this->Form->create('SolidTrust', array('url'=>array('controller'=>'Withdraws', 'action'=>'index')));?>
             <tr>
                 <td align="center">
                 	<?php echo $this->Html->image('stp.jpg', array('width'=>'100', 'height'=>'38')) ?>
-                    <?php echo $this->Form->hidden('SolidTrust.pay_name', array('value'=>'SolidTrust')) ?>
+                    <?php echo $this->Form->hidden('pay_name', array('value'=>'SolidTrust')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('SolidTrust.email', array('type'=>'email', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
+                    <?php echo $this->Form->input('account', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none', 'required'=>true)) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('SolidTrust.amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00')) ?>
+                    <?php echo $this->Form->input('amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00')) ?>
                 </td>
             	<td align="center">
                     <?php echo $this->Form->submit('MANUALLY WITHDRAW', array('style'=>'height:40px;')); ?>
                 </td>
             </tr>
-            <!-- egopay -->
+        <?php echo $this->Form->end(); ?>
+        <!-- egopay -->
+        <?php echo $this->Form->create('Egopay', array('url'=>array('controller'=>'Withdraws', 'action'=>'index')));?>
             <tr>
                 <td align="center">
                     <?php echo $this->Html->image('egopay.jpg', array('width'=>'100', 'height'=>'38')) ?>
-                    <?php echo $this->Form->hidden('Egopay.pay_name', array('value'=>'Egopay')) ?>
+                    <?php echo $this->Form->hidden('pay_name', array('value'=>'Egopay')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('Egopay.email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
+                    <?php echo $this->Form->input('account', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none', 'required'=>true)) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('Egopay.amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00')) ?>
+                    <?php echo $this->Form->input('amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00', 'required'=>true)) ?>
                 </td>
                 <td align="center">
                     <?php echo $this->Form->submit('MANUALLY WITHDRAW', array('style'=>'height:40px;')); ?>
                 </td>
             </tr>
+        <?php echo $this->Form->end(); ?>
+
+        <?php echo $this->Form->create('Perfectmoney', array('url'=>array('controller'=>'Withdraws', 'action'=>'index')));?>
             <tr>
                 <td align="center">
                     <?php echo $this->Html->image('pm.jpg', array('width'=>'100', 'height'=>'38')) ?>
-                    <?php echo $this->Form->hidden('PerfectMoney.pay_name', array('value'=>'PerfectMoney')) ?>
+                    <?php echo $this->Form->hidden('pay_name', array('value'=>'PerfectMoney')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('PerfectMoney.email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
+                    <?php echo $this->Form->input('account', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none', 'required'=>true)) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('PerfectMoney.amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00')) ?>
+                    <?php echo $this->Form->input('amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00', 'required'=>true)) ?>
                 </td>
                 <td align="center">
                     <?php echo $this->Form->submit('MANUALLY WITHDRAW', array('style'=>'height:40px;')); ?>
                 </td>
             </tr>
+        <?php echo $this->Form->end(); ?>
+
+        <?php echo $this->Form->create('Neteller', array('url'=>array('controller'=>'Withdraws', 'action'=>'index')));?>
             <tr>
                 <td align="center">
                     <?php echo $this->Html->image('neteller.jpg', array('width'=>'100', 'height'=>'38')) ?>
-                    <?php echo $this->Form->hidden('Neteller.pay_name', array('value'=>'Neteller')) ?>
+                    <?php echo $this->Form->hidden('pay_name', array('value'=>'Neteller')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('Neteller.email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
+                    <?php echo $this->Form->input('account', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none', 'required'=>true)) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('Neteller.amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00')) ?>
+                    <?php echo $this->Form->input('amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00', 'required'=>true)) ?>
                 </td>
                 <td align="center">
                     <?php echo $this->Form->submit('MANUALLY WITHDRAW', array('style'=>'height:40px;')); ?>
                 </td>
             </tr>
+        <?php echo $this->Form->end(); ?>
+
+        <?php echo $this->Form->create('Okpay', array('url'=>array('controller'=>'Withdraws', 'action'=>'index')));?>
             <tr>
                 <td align="center">
                     <?php echo $this->Html->image('okpay.png', array('width'=>'100', 'height'=>'38')) ?>
-                    <?php echo $this->Form->hidden('Okpay.pay_name', array('value'=>'Okpay')) ?>
+                    <?php echo $this->Form->hidden('pay_name', array('value'=>'Okpay')) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('Okpay.email', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none')) ?>
+                    <?php echo $this->Form->input('account', array('type'=>'text', 'class'=>'withdraw-email', 'label'=>false, 'div'=>false, 'placeholder'=>'none', 'required'=>true)) ?>
                 </td>
                 <td align="center">
-                    <?php echo $this->Form->input('Okpay.amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00')) ?>
+                    <?php echo $this->Form->input('amount', array('type'=>'number', 'class'=>'withdraw-amount', 'label'=>false, 'div'=>false, 'placeholder'=>'0.00', 'min' => '0.00', 'required'=>true)) ?>
                 </td>
                 <td align="center">
                     <?php echo $this->Form->submit('MANUALLY WITHDRAW', array('style'=>'height:40px;')); ?>
                 </td>
             </tr>
-        <?php echo $this->Form->end; ?>
+        <?php echo $this->Form->end(); ?>
     </tbody>
 </table>
 <font size="2" face="verdana">Payments via Egopay and Perfect Money will be sent within 12 hours.</font>

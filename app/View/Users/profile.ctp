@@ -20,14 +20,6 @@
                     </tr>
                     <tr>
                         <td width="200">
-                            <font size="2" face="verdana"><sombra>Country:</sombra></font>
-                        </td>
-                        <td width="200">
-                            <?php echo $this->Form->input('country', array('type'=>'text', 'readonly'=>true, 'style'=>'color:grey', 'label'=>false, 'div'=>false, 'size'=>'35')) ?>
-                        </td>
-                    </tr>
-                	<tr>
-                        <td width="200">
                             <font size="2" face="verdana"><sombra>Email:</sombra></font>
                         </td>
                         <td width="200">
@@ -35,69 +27,43 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><font size="2" face="verdana"><sombra>Solidtrustpay:</sombra></font></td>
+                        <td width="200">
+                            <font size="2" face="verdana"><sombra>Country:</sombra></font>
+                        </td>
+                        <td width="200">
+                            <?php echo $this->Form->input('country', array('type'=>'text', 'label'=>false, 'div'=>false, 'size'=>'35', 'placeholder'=>'none')) ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><font size="2" face="verdana"><sombra>Phone:</sombra></font></td>
                         <td>
-                            <?php
-                                if(empty($this->request->data['User']['solidtrustpay'])){
-                                    $this->request->data['User']['solidtrustpay'] = 'none';
-                                }
-                                echo $this->Form->input('solidtrustpay', array('type'=>'text', 'label'=>false, 'div'=>false, 'size'=>'35')); 
-                            ?>
+                            <?php echo $this->Form->input('phone', array('type'=>'text', 'label'=>false, 'div'=>false, 'size'=>'35', 'placeholder'=>'none')); ?>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <font size="2" face="verdana"><sombra>Egopay:</sombra></font>
+                            <font size="2" face="verdana"><sombra>Skype:</sombra></font>
                         </td>
                         <td>
-                            <?php
-                                if(empty($this->request->data['User']['egopay'])){
-                                    $this->request->data['User']['egopay'] = 'none';
-                                }
-                                echo $this->Form->input('egopay', array('type'=>'text', 'label'=>false, 'div'=>false, 'size'=>'35')); 
-                            ?>
+                            <?php echo $this->Form->input('skype', array('type'=>'text', 'label'=>false, 'div'=>false, 'size'=>'35', 'placeholder'=>'none')); ?>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <font size="2" face="verdana"><sombra>PerfectMoney:</sombra></font>
+                            <font size="2" face="verdana"><sombra>Facebook:</sombra></font>
                         </td>
                         <td>
-                            <?php
-                                if(empty($this->request->data['User']['perfectmoney'])){
-                                    $this->request->data['User']['perfectmoney'] = 'none';
-                                }
-                                echo $this->Form->input('perfectmoney', array('type'=>'text', 'label'=>false, 'div'=>false, 'size'=>'35')); 
-                            ?>
+                            <?php echo $this->Form->input('facebook', array('type'=>'text', 'label'=>false, 'div'=>false, 'size'=>'35', 'placeholder'=>'none')); ?>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <font size="2" face="verdana"><sombra>Neteller:</sombra></font>
+                            <font size="2" face="verdana"><sombra>City:</sombra></font>
                         </td>
                         <td>
-                            <?php
-                                if(empty($this->request->data['User']['neteller'])){
-                                    $this->request->data['User']['neteller'] = 'none';
-                                }
-                                echo $this->Form->input('neteller', array('type'=>'text', 'label'=>false, 'div'=>false, 'size'=>'35')); 
-                            ?>
+                            <?php echo $this->Form->input('city', array('type'=>'text', 'label'=>false, 'div'=>false, 'size'=>'35', 'placeholder'=>'none')); ?>
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <font size="2" face="verdana"><sombra>Okpay:</sombra></font>
-                        </td>
-                        <td>
-                            <?php
-                                if(empty($this->request->data['User']['okpay'])){
-                                    $this->request->data['User']['okpay'] = 'none';
-                                }
-                                echo $this->Form->input('okpay', array('type'=>'text', 'label'=>false, 'div'=>false, 'size'=>'35')); 
-                            ?>
-                        </td>
-                    </tr>
-
                     <tr>
                         <td>
                             <font size="2" face="verdana"><sombra>New Password:</sombra></font>

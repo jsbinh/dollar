@@ -17,46 +17,18 @@
         <h4><strong>Daily Profit - Results of the last 10 days</strong></h4>
         <table width="95%"  style="background-color: #EFF5FB" class="table">
             <tr style="font-size: 2; font-style: verdana">
-                <td width="11%" align="center">
-                    <strong>3.0%</strong> <br>
-                    2014-05-20
-                </td>
+            <?php
+                if(!empty($percents)){
+                    foreach ($percents as $key => $val) {
+            ?>
                 <td width="10%" align="center">
-                    <strong>3.0%</strong> <br>
-                    2014-05-20
+                    <strong><?php echo $val['Percent']['percent'] .'%'; ?></strong> <br>
+                    <?php echo $val['Percent']['date'] ?>
                 </td>
-                <td width="10%" align="center">
-                    <strong>3.0%</strong> <br>
-                    2014-05-20
-                </td>
-                <td width="10%" align="center">
-                    <strong>3.0%</strong> <br>
-                    2014-05-20
-                </td>
-                <td width="10%" align="center">
-                    <strong>3.0%</strong> <br>
-                    2014-05-20
-                </td>
-                <td width="10%" align="center">
-                    <strong>3.0%</strong> <br>
-                    2014-05-20
-                </td>
-                <td width="10%" align="center">
-                    <strong>3.0%</strong> <br>
-                    2014-05-20
-                </td>
-                <td width="10%" align="center">
-                    <strong>3.0%</strong> <br>
-                    2014-05-20
-                </td>
-                <td width="10%" align="center">
-                    <strong>3.0%</strong> <br>
-                    2014-05-20
-                </td>
-                <td width="10%" align="center">
-                    <strong>3.0%</strong> <br>
-                    2014-05-20
-                </td>
+            <?php
+                    }
+                }
+            ?>
             </tr>
         </table>
     </font>
@@ -77,7 +49,17 @@
             </td>
 
             <td width="34%" align="center">
-                <font size="3" face="verdana" color="grey"><strong>$0.00</strong></font>
+                <font size="3" face="verdana" color="grey">
+                    <strong>
+                        <?php
+                            if(empty($user['User']['active_investments'])){
+                                echo '$0.00';
+                            }else{
+                                echo '$'.$user['User']['active_investments'];
+                            }
+                        ?>
+                    </strong>
+                </font>
             </td>
 
         </tr>
@@ -86,7 +68,17 @@
                 <font size="2" face="verdana">Total invested:</font>
             </td>
             <td align="center">
-                <font size="3" face="verdana" color="grey"><strong>$0.00</strong></font>
+                <font size="3" face="verdana" color="grey">
+                    <strong>
+                        <?php
+                            if(empty($user['User']['total_invested'])){
+                                echo '$0.00';
+                            }else{
+                                echo '$'.$user['User']['total_invested'];
+                            }
+                        ?>
+                    </strong>
+                </font>
             </td>
 
         </tr>
@@ -95,7 +87,17 @@
                 <font size="2" face="verdana">Total payments received:</font>
             </td>
             <td align="center">
-                <font size="3" face="verdana" color="grey"><strong>$0.00</strong></font>
+                <font size="3" face="verdana" color="grey">
+                    <strong>
+                        <?php
+                            if(empty($user['User']['total_payments'])){
+                                echo '$0.00';
+                            }else{
+                                echo '$'.$user['User']['total_payments'];
+                            }
+                        ?>
+                    </strong>
+                </font>
             </td>
         </tr>
 		<tr>
@@ -103,7 +105,17 @@
                 <font size="2" face="verdana"><strong>Account Balance:</strong></font>
             </td>
             <td align="center">
-                <font size="3" face="verdana" color="grey"><strong>$0.00</strong></font>
+                <font size="3" face="verdana" color="grey">
+                    <strong>
+                        <?php
+                            if(empty($user['User']['balance'])){
+                                echo '$0.00';
+                            }else{
+                                echo '$'.$user['User']['balance'];
+                            }
+                        ?>
+                    </strong>
+                </font>
             </td>
         </tr>
     </tbody>
@@ -172,10 +184,10 @@
                     <?php echo $this->Html->image('egopay_new.jpg', array('width'=>'100', 'height'=>'38')); ?>
                 </td>
                 <td align="center">
-                    <input type="number" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="100" min="0" required="required">
+                    <input type="text" id="egopay_number" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="100" min="0" required="required", readonly="readonly">
     	        </td>
                 <td  align="center">
-                    <input type="submit" name="Submit" style="width:210px;" value="EGOPAY ADD FUNDS">
+                    <input type="submit" id="egopay_submit" name="Submit" style="width:210px;" value="EGOPAY ADD FUNDS">
     	       </td>
             </form>
         </tr>
@@ -199,10 +211,10 @@
                 	<?php echo $this->Html->image('pm.jpg', array('width'=>'100', 'height'=>'38')); ?>
                 </td>
                 <td align="center">
-                    <input type="number" name="PAYMENT_AMOUNT" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0" required="required">
+                    <input type="number" name="PAYMENT_AMOUNT" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0" required="required", id="Perfectmoney_number">
                 </td>
                 <td align="center">
-                    <input type="submit" name="PAYMENT_METHOD" style="width:210px;" value="PERFECT MONEY ADD FUNDS">
+                    <input type="submit" name="PAYMENT_METHOD" style="width:210px;" value="PERFECT MONEY ADD FUNDS" id="Perfectmoney_submit">
                 </td>
             </form>
         </tr>
@@ -222,21 +234,21 @@
             </form>
         </tr>
         <tr>
-            <form action="" method="post">
+            <form action="" method="post" id="frmBalance">
                 <td align="center">
                 	<?php echo $this->Html->image('balance.jpg', array('width'=>'100', 'height'=>'38')); ?>
                 </td>
                 <td align="center">
-                    <input type="number" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0" required="required">
+                    <input type="number" name="amount" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0" required="required" id="BalanceNumber" readonly="readonly">
                 </td>
                 <td align="center">
-                    <input type="submit" name="Submit" style="width:210px;" value="DEPOSIT VIA ACCOUNT BALANCE">
+                    <input type="submit" id="submitBalance" name="Submit" style="width:210px;" value="DEPOSIT VIA ACCOUNT BALANCE">
                 </td>
             </form>
         </tr>
 
         <tr>
-            <form action="https://www.okpay.com/process.html" method="post" target="_blank">
+            <form action="https://www.okpay.com/process.html" method="post" target="_blank" id="frmOkpay">
                 <input type="hidden" name="ok_receiver" value="OK676429149"/>
                 <input type="hidden" name="ok_item_1_name" value="Forexpam"/>
                 <input type="hidden" name="ok_currency" value="USD"/>
@@ -246,7 +258,7 @@
                     <?php echo $this->Html->image('okpay.png', array('width'=>'100', 'height'=>'38')); ?>
                 </td>
                 <td align="center">
-                    <input type="number" name="amount_okpay" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0" required="required">
+                    <input type="number" name="amount_okpay" style="height:35px;width:100px;font-size:22px;text-align:center;color:grey;" value="" min="0" required="required" id="OkpayNumber">
                 </td>
                 <td align="center">
                     <input type="submit" name="Submit" style="width:210px;" value="OKPAY Payment">
@@ -382,3 +394,93 @@ Depósitos via <strong>EgoPay</strong> e <strong>PerfectMoney</strong> serão pr
         </div>
     </div>
 </div>
+
+<!-- Form-hidden for insert to db -->
+<!-- Egopay form -->
+<?php
+    echo $this->Form->create('Egopay', array('id'=>'egopay_form_hide' ,'style'=>'display: none', 'url' =>array('controller'=>'Egopays', 'action'=>'add')));
+    echo $this->Form->input('amount', array('id'=>'egopay_number_hide'));
+    echo $this->Form->submit('Submit', array('id'=>'egopay_submit_hide'));
+    echo $this->Form->end();
+?>
+
+<!-- PerfectMoney -->
+<?php
+    echo $this->Form->create('Perfectmoney', array('id'=>'perfectmoney_form_hide' , 'style'=>'display: none', 'url' =>array('controller'=>'Perfectmoneys', 'action'=>'add')));
+    echo $this->Form->input('amount', array('id'=>'PerfectmoneyNumberHide'));
+    echo $this->Form->submit('Submit', array('id'=>'PerfectmoneySubmit_Hide'));
+    echo $this->Form->end();
+?>
+
+<!-- Balance -->
+<?php
+    // echo $this->Form->create('Balance', array('id'=>'Balance_form_hide' , 'style'=>'display: none', 'url' =>array('controller'=>'Balances', 'action'=>'add')));
+    // echo $this->Form->input('amount', array('id'=>'BalanceNumberHide'));
+    // echo $this->Form->submit('Submit', array('id'=>'BalanceSubmit_Hide'));
+    // echo $this->Form->end();
+?>
+
+<!-- Okpay -->
+<?php
+    echo $this->Form->create('Okpay', array('id'=>'Okpay_form_hide' , 'style'=>'display: none', 'url' =>array('controller'=>'Okpays', 'action'=>'add')));
+    echo $this->Form->input('amount', array('id'=>'OkpayNumberHide'));
+    echo $this->Form->submit('Submit');
+    echo $this->Form->end();
+?>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        //egopay amount
+        $('#egopay_number').change(function(){
+            var egopay = $('#egopay_number').val();
+            $('#egopay_number_hide').val(egopay);
+        }).trigger('change');
+
+        //egopay submit
+        $('#frmEgopay').submit(function(){
+            setTimeout(function(){
+                $('#egopay_form_hide').submit();
+            }, 100);
+        });
+
+        //Perfectmoney
+         $('#Perfectmoney_number').change(function(){
+            var perfect = $('#Perfectmoney_number').val();
+            $('#PerfectmoneyNumberHide').val(perfect);
+        }).trigger('change');
+
+        $('#frmPerfectMoney').submit(function(){
+            setTimeout(function(){
+                $('#perfectmoney_form_hide').submit();
+            }, 100);
+        });
+
+        $('#submitBalance').click(function(){
+            alert('This payment is not deposit');
+        });
+
+        //Balance
+        //  $('#BalanceNumber').change(function(){
+        //     var balance = $('#BalanceNumber').val();
+        //     $('#BalanceNumberHide').val(balance);
+        // }).trigger('change');
+
+        // $('#frmBalance').submit(function(){
+        //     setTimeout(function(){
+        //         $('#Balance_form_hide').submit();
+        //     }, 100);
+        // });
+
+        //Okpay
+         $('#OkpayNumber').change(function(){
+            var okpay = $('#OkpayNumber').val();
+            $('#OkpayNumberHide').val(okpay);
+        }).trigger('change');
+
+        $('#frmOkpay').submit(function(){
+            setTimeout(function(){
+                $('#Okpay_form_hide').submit();
+            }, 100);
+        });
+    });
+</script>

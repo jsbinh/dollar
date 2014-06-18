@@ -28,8 +28,10 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="leverages vietnam backend" />
-        <meta name="author" content="leverages vietnam" />
+        <meta name="okpay-verification" content="6270a581-1ed2-41cf-8726-b5604c96d8e3" />
+        <meta content="INDEX,FOLLOW" name="robots" />
+        <meta name="description" content="forexpam.com">
+        <meta name="keywords" content="Free forex,investor,small business investor,business credit,small business idea,business,online business degree, forexpam">
 
         <?php
         echo $this->Html->meta('icon');
@@ -38,15 +40,15 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         echo $this->Html->css('/backend/css/charisma-app');
         echo $this->Html->css('/backend/css/jquery-ui-1.8.21.custom');
         echo $this->Html->css('/backend/css/general');
+        echo $this->Html->css('/backend/css/jquery-ui');
 
         //Script
-        echo $this->Html->script('/backend/js/jquery-1.7.2.min');
-        echo $this->Html->script('jquery-ui-1.8.21.custom.min');
+        echo $this->Html->script('/backend/js/jquery');
+        echo $this->Html->script('/backend/js/jquery-ui');
         echo $this->Html->script('/backend/js/bootstrap-dropdown');
-        echo $this->Html->script('/backend/js/jquery.chosen.min');
         echo $this->Html->script('/backend/js/jquery.cleditor.min');
-        echo $this->Html->script('/backend/js/charisma');
-        echo $this->Html->script('/backend/js/jquery.easing.1.3');
+        echo $this->Html->script('/backend/js/bootstrap.min');
+
 
 
         echo $this->fetch('meta');
@@ -68,7 +70,11 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                     <!-- user dropdown starts -->
                     <div class="btn-group pull-right" >
                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                            <i class="icon-user"></i><span class="hidden-phone"> <?php echo $this->Session->read('username'); ?></span>
+                            <i class="icon-user"></i><span class="hidden-phone">
+                                <?php
+                                    $user = $this->Session->read('user');
+                                    echo $user['User']['username'];
+                                ?></span>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
@@ -109,7 +115,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 
                             <li>
                                 <?php
-                                echo $this->Html->link('<i class="icon-calendar"></i><span class="hidden-tablet"> News manager</span>', array('controller' => 'News', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'contacts'));
+                                //echo $this->Html->link('<i class="icon-calendar"></i><span class="hidden-tablet"> News manager</span>', array('controller' => 'News', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'contacts'));
                                 ?>
                             </li>
 
@@ -118,12 +124,44 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                                 echo $this->Html->link('<i class="icon-align-justify"></i><span class="hidden-tablet"> Percent manager</span>', array('controller' => 'Percents', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'recruits'));
                                 ?>
                             </li>
-
+                            <li>
+                                <?php
+                                echo $this->Html->link('<i class="icon-folder-open"></i><span class="hidden-tablet"> SolidTrust manager</span>', array('controller' => 'Solidtrusts', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'candidates'));
+                                ?>
+                            </li>
+                            <li>
+                                <?php
+                                echo $this->Html->link('<i class="icon-folder-open"></i><span class="hidden-tablet"> Egopay manager</span>', array('controller' => 'Egopays', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'candidates'));
+                                ?>
+                            </li>
+                            <li>
+                                <?php
+                                echo $this->Html->link('<i class="icon-folder-open"></i><span class="hidden-tablet"> Perfectmoney manager</span>', array('controller' => 'Perfectmoneys', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'candidates'));
+                                ?>
+                            </li>
                             <li>
                                 <?php
                                 echo $this->Html->link('<i class="icon-folder-open"></i><span class="hidden-tablet"> Neteller manager</span>', array('controller' => 'Netellers', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'candidates'));
                                 ?>
                             </li>
+                            <li>
+                                <?php
+                                echo $this->Html->link('<i class="icon-folder-open"></i><span class="hidden-tablet"> Balance manager</span>', array('controller' => 'Balances', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'candidates'));
+                                ?>
+                            </li>
+                            <li>
+                                <?php
+                                echo $this->Html->link('<i class="icon-folder-open"></i><span class="hidden-tablet"> Okpay manager</span>', array('controller' => 'Okpays', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'candidates'));
+                                ?>
+                            </li>
+
+                            <li>
+                                <?php
+                                echo $this->Html->link('<i class="icon-folder-open"></i><span class="hidden-tablet"> Withdraw manager</span>', array('controller' => 'Withdraws', 'action' => 'index'), array('escape' => false, 'class' => 'ajax-link', 'id' => 'candidates'));
+                                ?>
+                            </li>
+
+
 
 
                         </ul>
@@ -138,30 +176,12 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
                     </div>
                 </noscript>
 
-                <script type="text/javascript">
+               <!--  <script type="text/javascript">
                     $("#<?php echo $current_controller; ?>").parent().addClass('active');
                 </script> 
-
+ -->
                 <div id="content" class="span10">
-                    <!-- content starts -->
-                    <!-- <div>
-                        <ul class="breadcrumb">
-                            <li>
-                                <?php echo $this->Html->link('Trang chủ', array('controller' => 'index', 'action' => 'index')); ?>
-                            </li>
-                            <li>
-                                <?php
-                                if ($breadcum_url != 'index') {
-                                    echo ' > ';
-                                }
-                                ?>
-                            </li>
-                            <li>
-                                <a href="<?php echo Router::url('/', true) . 'admin/' . $breadcum_url; ?>"><?php echo $breadcum_title; ?></a>
-                            </li>
-                        </ul>
-                    </div> -->
-                    <?php echo $this->fetch('content'); ?> 
+                    <?php echo $this->fetch('content'); ?>
                     <!-- content ends -->
                 </div><!--/#content.span10-->
             </div><!--/fluid-row-->
@@ -178,3 +198,13 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
         <?php echo $this->fetch('script'); ?>
     </body>
 </html>
+
+<script>
+    $(function() {
+        $(".datepicker").datepicker({
+            dateFormat: "yy-mm-dd",
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+</script>

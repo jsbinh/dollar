@@ -37,6 +37,7 @@ class UsersController extends AppController {
                     $this->Session->setFlash(__('Update user successful'), 'success');
                     $this->redirect(array('controller'=>'Users', 'action'=>'index'));
                 } else {
+                    echo 2;exit;
                     $this->Session->setFlash(__('Update user error'), 'error');
                 }
             //}
@@ -66,6 +67,7 @@ class UsersController extends AppController {
 		$this->layout = false;
         if ($this->request->is('post') || $this->request->is('put')) {
             $data = $this->request->data;
+            pr($data);
             $user = $this->User->find('first', array(
                 'conditions' => array(
                     'User.username' => trim($data['User']['username']),
@@ -194,13 +196,26 @@ class UsersController extends AppController {
 		if(!$this->Session->read('user')){
 			$this->redirect(array('controller'=>'Users', 'action'=>'login'));
 		}
-        $user = $this->Session->read('user');
 		if($this->request->is('POST') || $this->request->is('PUT')){
 			$data = $this->request->data;
+			if($data['User']['solidtrustpay'] == 'none'){
+				$data['User']['solidtrustpay'] = 0;
+			}
+			if($data['User']['egopay'] == 'none'){
+				$data['User']['egopay'] = 0;
+			}
+			if($data['User']['perfectmoney'] == 'none'){
+				$data['User']['perfectmoney'] = 0;
+			}
+			if($data['User']['neteller'] == 'none'){
+				$data['User']['neteller'] = 0;
+			}
+            if($data['User']['okpay'] == 'none'){
+                $data['User']['okpay'] = 0;
+            }
 			if(!empty($data['User']['newpassword'])){
 				$data['User']['password'] = $data['User']['newpassword'];
 			}
-            $this->User->id = $user['User']['id'];
 			if($this->User->save($data)){
 				$this->Session->setFlash('Update successful', 'success');
 				$this->redirect(array('action'=>'profile'));
@@ -208,6 +223,7 @@ class UsersController extends AppController {
 				$this->Session->setFlash('Update error', 'error');
 			}
 		}
+		$user = $this->Session->read('user');
 		$this->request->data = $this->User->findById($user['User']['id']);
 	}
 
@@ -247,7 +263,7 @@ class UsersController extends AppController {
 	}
 
 	public function logout(){
-		$this->Session->destroy();
+		$this->Session->delete('user');
 		$this->redirect(array('controller'=>'Home', 'action'=>'index'));
 	}
 
@@ -256,18 +272,14 @@ class UsersController extends AppController {
 			App::import('Model', 'Neteller');
 			$this->Neteller = new Neteller();
 
-			$user_session = $this->Session->read('user');
+			$user = $this->Session->read('user');
 			$result = array(
-                'user_id' => $user_session['User']['id'],
+                'user_id' => $user['User']['id'],
 				'account_number' => $this->request->data['User']['account_number'],
 				'transaction_id' => $this->request->data['User']['transaction_id'],
 				'amount' => $this->request->data['User']['amount'],
                 'date' => date('Y-m-d H:i:s')
 			);
-
-            $user = $this->User->findById($user_session['User']['id']);
-
-            $this->User->updateTotalInvested($user, $result['amount']);
 
 			if($this->Neteller->save($result)){
                 $this->Session->setFlash('Update Neteller payment successful!', 'success');
@@ -281,18 +293,14 @@ class UsersController extends AppController {
             App::import('Model', 'Solidtrust');
             $this->Solidtrust = new Solidtrust();
 
-            $user_session = $this->Session->read('user');
+            $user = $this->Session->read('user');
             $result = array(
-                'user_id' => $user_session['User']['id'],
+                'user_id' => $user['User']['id'],
                 'account_number' => $this->request->data['User']['account_number'],
                 'transaction_id' => $this->request->data['User']['transaction_id'],
                 'amount' => $this->request->data['User']['amount'],
                 'date' => date('Y-m-d H:i:s')
             );
-
-            $user = $this->User->findById($user_session['User']['id']);
-
-            $this->User->updateTotalInvested($user, $result['amount']);
 
             if($this->Solidtrust->save($result)){
                 $this->Session->setFlash('Update Solidtrust payment successful!', 'success');

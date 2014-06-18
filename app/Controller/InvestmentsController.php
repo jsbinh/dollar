@@ -8,7 +8,7 @@ class InvestmentsController extends AppController {
 		
 	}
 
-	public function admin_index(){
+	public function index1(){
 		
 	}
 }

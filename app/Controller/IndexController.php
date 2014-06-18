@@ -15,5 +15,6 @@ class IndexController extends AppController {
         if(!$this->Session->read('user') || !$flg){
             $this->redirect(array('controller' => 'users', 'action' => 'logout'));
         }
+        $this->redirect(array('controller'=>'users', 'action'=>'admin_index'));
     }
 }

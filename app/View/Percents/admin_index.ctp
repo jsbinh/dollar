@@ -19,10 +19,9 @@
     <table class="table table-striped table-bordered bootstrap-datatable datatable">
         <thead>
             <tr>
-                <th>Username</th>
                 <th>Date</th>
                 <th>Percent</th>
-                <th width="14%">Action</th>
+                <th width="15%">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -33,9 +32,6 @@
                 foreach ($percents as $data) {
                     ?>
                     <tr>
-                        <td>
-                            <?php echo h($this->User->getUserbyId($data['Percent']['user_id'])); ?>
-                        </td>
                         <td class="center">
                             <?php echo h($data['Percent']['date']) ?>
                         </td>
@@ -46,12 +42,10 @@
                             <?php
                             echo $this->Html->link('<i class="icon-zoom-in icon-white"></i>
                                                          Edit
-                                                        </span> ', array('controller' => 'percents',
+                                                        </span> ', array('controller' => 'Percents',
                                 'action' => 'edit', $data['Percent']['id']), array('escape' => false, 'class' => 'btn btn-success'));
-                            ?>
-                            <?php
-                            echo $this->Html->link('<i class="icon-trash icon-white"></i> Xóa</span> ', array('controller' => 'percents', 'action' => 'delete', $data['Percent']['id']), array('escape' => false, 'class' => 'btn btn-danger', 'confirm' => Configure::read('DELETE_CONFIRM'))
-                            );
+                            echo ' ';
+                            echo $this->Form->postLink('<i class="icon-trash icon-white"></i>Delete</span>',array('controller' => 'Percents', 'action' => 'delete', $data['Percent']['id']), array('escape' => false, 'class' => 'btn btn-danger'), __('Do you want delete this row?', h($data['Percent']['id'])));
                             ?>
                         </td>
                     </tr>
